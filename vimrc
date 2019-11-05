@@ -124,7 +124,7 @@ else
 endif
 
 "ycm_simple_conf 使用一个xml文件生成YouCompleteMe的配置
-Plug 'tdcdev/ycm_simple_conf', { 'for': [ 'cpp', 'c', 'objc' ] }
+Plug 'chengxie/ycm_simple_conf', { 'for': [ 'cpp', 'c', 'objc' ] }
 
 "vim-instant-markdown
 if has('mac')
