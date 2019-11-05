@@ -1,2 +1,2 @@
-# myvimrc
-Just my .vimrc
+# my vimrc
+Just my vimrc
