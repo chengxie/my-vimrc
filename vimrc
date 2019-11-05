@@ -146,15 +146,11 @@ endif
     "colorscheme material-monokai
 "endif
 
-if filereadable($HOME.'/.vim/colors/monokai.vim')
+if isdirectory($HOME.'/.vim/plugged/my-vim-themes/colors')
     colorscheme monokai
-endif
-
-"if filereadable($HOME.'/.vim/colors/termcolor.vim')
+    "colorscheme solarized
     "colorscheme termcolor
-"endif
-
-
+endif
 
 
 
