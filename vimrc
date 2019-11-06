@@ -118,7 +118,7 @@ Plug 'chengxie/vim-gutentags'
 
 "YouCompleteMe 自动补全, 语义分析
 if has('mac') || has('unix') || has('linux')
-    Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --clang-completer' }
+    Plug 'ycm-core/YouCompleteMe', { 'do': 'python3 ./install.py --clang-completer' }
 else
     Plug 'ycm-core/YouCompleteMe', { 'do': 'echo \"do noting\"' } 
 endif
