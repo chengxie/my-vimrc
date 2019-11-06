@@ -114,7 +114,7 @@ Plug 'octol/vim-cpp-enhanced-highlight', { 'for': [ 'cpp', 'c' ] }
 Plug 'derekwyatt/vim-protodef', { 'for': [ 'cpp', 'c', 'objc' ] }
 
 "gutentags ctags 管理器
-Plug 'chengxie/vim-gutentags', { 'for': [ 'cpp', 'c', 'objc' ] }
+Plug 'chengxie/vim-gutentags'
 
 "YouCompleteMe 自动补全, 语义分析
 if has('mac') || has('unix') || has('linux')
@@ -348,17 +348,6 @@ let g:gutentags_file_list_command = 'find . -type f -name "*.h" -o -name "*.c" -
 nmap tn :tnext<CR>
 " 反向遍历同名标签
 nmap tp :tprevious<CR>
-function! s:get_gutentags_status(mods) abort
-	let l:msg = ''
-	if index(a:mods, 'ctags') >= 0
-		let l:msg .= '♨'
-	endif
-	if index(a:mods, 'cscope') >= 0
-		let l:msg .= '♺'
-	endif
-	return l:msg
-endfunction
-set statusline+=%{gutentags#statusline_cb(function('<SID>get_gutentags_status'))}
 
 
 
