@@ -116,18 +116,21 @@ Plug 'derekwyatt/vim-protodef', { 'for': [ 'cpp', 'c', 'objc' ] }
 "gutentags ctags 管理器
 Plug 'chengxie/vim-gutentags'
 
+"coc.nvim 自动补全, 语法检查
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 "YouCompleteMe 自动补全, 语义分析
-if has('mac') || has('unix') || has('linux')
-    Plug 'ycm-core/YouCompleteMe', { 'do': 'python3 ./install.py --clang-completer' }
-else
-    Plug 'ycm-core/YouCompleteMe', { 'do': 'echo \"do noting\"' } 
-endif
+"if has('mac') || has('unix') || has('linux')
+    "Plug 'ycm-core/YouCompleteMe', { 'do': 'python3 ./install.py --clang-completer' }
+"else
+    "Plug 'ycm-core/YouCompleteMe', { 'do': 'echo \"do noting\"' } 
+"endif
 
 "ycm_simple_conf 使用一个xml文件生成YouCompleteMe的配置
-Plug 'chengxie/ycm_simple_conf', { 'for': [ 'cpp', 'c', 'objc' ] }
+"Plug 'chengxie/ycm_simple_conf', { 'for': [ 'cpp', 'c', 'objc' ] }
 
 "vim-instant-markdown
-if has('mac')
+if !has('linux')
     Plug 'suan/vim-instant-markdown', {'for': 'markdown' }
 endif
 
