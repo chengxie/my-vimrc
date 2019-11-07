@@ -120,14 +120,15 @@ Plug 'chengxie/vim-gutentags'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 "YouCompleteMe 自动补全, 语义分析
-"if has('mac') || has('unix') || has('linux')
-    "Plug 'ycm-core/YouCompleteMe', { 'do': 'python3 ./install.py --clang-completer' }
+Plug 'ycm-core/YouCompleteMe', { 'do': 'python3 ./install.py --clang-completer --system-libclang --clang-tidy' }
+"if has('mac') || has('linux')
+    "Plug 'ycm-core/YouCompleteMe', { 'do': 'python3 ./install.py --clang-completer --system-libclang --clang-tidy' }
 "else
     "Plug 'ycm-core/YouCompleteMe', { 'do': 'echo \"do noting\"' } 
 "endif
 
 "ycm_simple_conf 使用一个xml文件生成YouCompleteMe的配置
-"Plug 'chengxie/ycm_simple_conf', { 'for': [ 'cpp', 'c', 'objc' ] }
+Plug 'chengxie/ycm_simple_conf', { 'for': [ 'cpp', 'c', 'objc' ] }
 
 "vim-instant-markdown
 if !has('linux')
@@ -362,9 +363,10 @@ nmap tp :tprevious<CR>
 "补全内容不以分割子窗口形式出现，只显示补全列表
 set completeopt-=preview
 "set completeopt=longest,menu
-if !has('mac') && !has('unix') && !has('linux')
-    let g:ycm_server_python_interpreter='/mingw64/bin/python3.8'
+if !has('mac') && !has('linux')
+    let g:ycm_server_python_interpreter='/usr/bin/python3.7'
 endif
+
 let g:ycm_confirm_extra_conf=1
 "开启语法引擎, 关键字补全
 let g:ycm_seed_identifiers_with_syntax=1	
