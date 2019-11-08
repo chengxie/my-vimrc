@@ -117,14 +117,14 @@ Plug 'derekwyatt/vim-protodef', { 'for': [ 'cpp', 'c', 'objc' ] }
 Plug 'chengxie/vim-gutentags'
 
 "coc.nvim 自动补全, 语法检查
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 "YouCompleteMe 自动补全, 语义分析
-Plug 'ycm-core/YouCompleteMe', { 'do': 'python3 ./install.py --clang-completer --system-libclang --clang-tidy' }
 "if has('mac') || has('linux')
     "Plug 'ycm-core/YouCompleteMe', { 'do': 'python3 ./install.py --clang-completer --system-libclang --clang-tidy' }
 "else
     "Plug 'ycm-core/YouCompleteMe', { 'do': 'echo \"do noting\"' } 
+	Plug 'ycm-core/YouCompleteMe', { 'do': 'python3.7 ./install.py --clang-completer --system-libclang' }
 "endif
 
 "ycm_simple_conf 使用一个xml文件生成YouCompleteMe的配置
