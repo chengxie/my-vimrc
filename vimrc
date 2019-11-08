@@ -120,12 +120,12 @@ Plug 'chengxie/vim-gutentags'
 "Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 "YouCompleteMe 自动补全, 语义分析
-"if has('mac') || has('linux')
-    "Plug 'ycm-core/YouCompleteMe', { 'do': 'python3 ./install.py --clang-completer --system-libclang --clang-tidy' }
-"else
-    "Plug 'ycm-core/YouCompleteMe', { 'do': 'echo \"do noting\"' } 
-	Plug 'ycm-core/YouCompleteMe', { 'do': 'python3.7 ./install.py --clang-completer --system-libclang' }
-"endif
+if has('mac') || has('linux')
+    Plug 'ycm-core/YouCompleteMe', { 'do': 'python3 ./install.py --clang-completer --system-libclang --clang-tidy' }
+else
+    Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --skip-build' } 
+	"Plug 'ycm-core/YouCompleteMe', { 'do': 'python3.7 ./install.py --clang-completer --system-libclang' }
+endif
 
 "ycm_simple_conf 使用一个xml文件生成YouCompleteMe的配置
 Plug 'chengxie/ycm_simple_conf', { 'for': [ 'cpp', 'c', 'objc' ] }
@@ -327,7 +327,7 @@ let g:disable_protodef_sorting=0
 let g:gutentags_dont_load=0
 "let g:gutentags_ctags_auto_set_tags = 1
 " gutentags搜索工程目录的标志，碰到这些文件/目录名就停止向上一级目录递归 "
-let g:gutentags_project_root = ['.svn', '.git', '.ycm_extra_conf.py', '.ycm_simple_conf.xml' ]
+let g:gutentags_project_root = ['.svn', '.git', '.root', '.ycm_extra_conf.py', '.ycm_simple_conf.xml' ]
 " 所生成的数据文件的名称
 let g:gutentags_ctags_tagfile = '.tags'
 " 将自动生成的 tags 文件全部放入 ~/.cache/tags 目录中，避免污染工程目录
