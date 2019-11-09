@@ -101,23 +101,20 @@ Plug 'SirVer/ultisnips'
 "my vim snippets for ultisnips
 Plug 'chengxie/my-vim-snippets'
 
-"a.vim 切换cpp,h
-Plug 'chengxie/a.vim', { 'for': [ 'cpp', 'c', 'objc' ] }
-
-"fswitch 切换cpp,h
-Plug 'derekwyatt/vim-fswitch'
-
 "c++语法高亮, 支持stl库关键字
 Plug 'octol/vim-cpp-enhanced-highlight', { 'for': [ 'cpp', 'c' ] }
 
-"由接口快速生成实现框架
+"a.vim 切换cpp,h
+Plug 'chengxie/a.vim', { 'for': [ 'cpp', 'c', 'objc' ] }
+
+"fswitch 切换cpp,h, 功能与A.vim重复, 但是vim-protodef依赖这个
+Plug 'derekwyatt/vim-fswitch'
+
+"由接口快速生成实现框架, 依赖vim-fswitch
 Plug 'derekwyatt/vim-protodef', { 'for': [ 'cpp', 'c', 'objc' ] }
 
 "gutentags ctags 管理器
 Plug 'chengxie/vim-gutentags'
-
-"coc.nvim 自动补全, 语法检查
-"Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 "YouCompleteMe 自动补全, 语义分析
 if has('win32unix')
@@ -130,7 +127,7 @@ endif
 Plug 'chengxie/ycm_simple_conf', { 'for': [ 'cpp', 'c', 'objc' ] }
 
 "vim-instant-markdown
-if !has('linux')
+if has('mac') || has('win32unix')
     Plug 'suan/vim-instant-markdown', {'for': 'markdown' }
 endif
 
@@ -360,12 +357,11 @@ nmap tp :tprevious<CR>
 "	YouCompleteMe 自动代码补全
 "==============================================================
 "补全内容不以分割子窗口形式出现，只显示补全列表
-set completeopt-=preview
+"set completeopt-=preview
 "set completeopt=longest,menu
-if has('win32unix')
-    let g:ycm_server_python_interpreter='/usr/bin/python3.7'
-endif
-
+"if has('win32unix')
+    "let g:ycm_server_python_interpreter='/usr/bin/python3.7'
+"endif
 let g:ycm_confirm_extra_conf=1
 "开启语法引擎, 关键字补全
 let g:ycm_seed_identifiers_with_syntax=1	
