@@ -19,7 +19,7 @@ set number			"开启行号显示
 set cursorline		"高亮显示当前行
 "set cursorcolumn	"高亮显示当前列
 set hlsearch 		"高亮显示搜索结果
-set expandtab
+"set expandtab
 set tabstop=4		"编辑时制表符占用空格数
 set shiftwidth=4	"格式化时制表符占用空格数
 set softtabstop=4	"将连续数量的空格视为一个制表符
@@ -95,7 +95,7 @@ Plug 'chengxie/DoxygenToolkit.vim'
 "书签
 Plug 'kshenoy/vim-signature'
 
-"模版补全
+"模版补全,需要python3.7+支持
 Plug 'SirVer/ultisnips'
 
 "my vim snippets for ultisnips
@@ -130,6 +130,7 @@ Plug 'chengxie/ycm_simple_conf', { 'for': [ 'cpp', 'c', 'objc' ] }
 if has('mac') || has('win32unix')
     Plug 'suan/vim-instant-markdown', {'for': 'markdown' }
 endif
+
 
 call plug#end()
 
@@ -359,9 +360,9 @@ nmap tp :tprevious<CR>
 "补全内容不以分割子窗口形式出现，只显示补全列表
 "set completeopt-=preview
 "set completeopt=longest,menu
-"if has('win32unix')
-    "let g:ycm_server_python_interpreter='/usr/bin/python3.7'
-"endif
+if has('win32unix')
+    let g:ycm_server_python_interpreter='/usr/bin/python3'
+endif
 let g:ycm_confirm_extra_conf=1
 "开启语法引擎, 关键字补全
 let g:ycm_seed_identifiers_with_syntax=1	
@@ -381,9 +382,15 @@ let g:ycm_use_ultisnips_completer=1
 let g:ycm_min_num_of_chars_for_completion=2
 "跳转的buf窗口打开方式,横向分割
 let g:ycm_goto_buffer_command='horizontal-split' "vertical
-"是否启用诊断提示,否
-let g:ycm_enable_diagnostic_signs=0 
-let g:ycm_enable_diagnostic_highlighting=0
+"是否启用诊断提示
+let g:ycm_enable_diagnostic_signs=1
+if g:ycm_enable_diagnostic_signs == 1
+    set signcolumn=yes
+    highlight YcmErrorLine guibg=#3f0000
+    let g:ycm_enable_diagnostic_highlighting=1
+    let g:ycm_show_diagnostics_ui=1 
+endif
+
 let g:ycm_add_preview_to_completeopt = 0
 let g:ycm_autoclose_preview_window_after_completion=1
 "autocmd User YcmQuickFixOpened cclose
@@ -413,7 +420,57 @@ let g:ycm_filetype_whitelist = {
 			"\ 'c,cpp,python,java,go,erlang,perl': ['re!\w{2}'],
 			"\ 'cs,lua,javascript': ['re!\w{2}'],
 			"\ }
+"nnoremap <silent><leader>jc :call TracyoneGotoDef("")<CR>
+"nnoremap <Leader>g :call TracyoneGotoDef("")<cr>
+"nnoremap <C-\>g :call TracyoneGotoDef("sp")<cr>
 
+function! TracyoneGotoDef(open_type)
+    let l:ycm_ret=s:YcmGotoDef(a:open_type)
+    if l:ycm_ret < 0
+        try
+            execute "cs find g ".expand("<cword>")
+        catch /^Vim\%((\a\+)\)\=:E/
+            call s:EchoWarning("cscope query failed")
+            if a:open_type != "" | wincmd q | endif
+            return -1
+        endtry
+    else
+        return 0
+    endif
+    return 0
+endfunction
+
+func! s:YcmGotoDef(open_type)
+    let l:cur_word=expand("<cword>")."\s*\(.*[^;]$"
+    :redir => l:msg
+    execute a:open_type
+    silent! execute ":YcmCompleter GoToDefinition"
+    :redir END
+    let l:rs=split(l:msg,'\r\n\|\n')
+    "make sure index valid
+    if get(l:rs,-1,3) !=3 && l:rs[-1] =~ 'Runtime.*'
+        :redir => l:msg
+        silent! execute ":YcmCompleter GoToDeclaration"
+        :redir END
+        let l:rs=split(l:msg,'\r\n\|\n')
+        if get(l:rs,-1,3) != 3 && l:rs[-1] !~ 'Runtime.*'
+            execute ":silent! A"
+            " search failed then go back
+            if search(l:cur_word) == 0
+                execute ":silent! A"
+                return -2
+            endif
+            return 3
+        elseif get(l:rs,-1,3) == 3 "not exist no error
+            return 0
+        else
+            return -3
+        endif
+
+    else
+        return 1
+    endif
+endfunc
 
 
 
@@ -535,3 +592,5 @@ nmap <F10>	#:%s/<C-R>=expand("<cword>")<CR>//g<Left><Left>
 "启动vim时,当前目录下如果存在.myvim,就加载它
 "au VimEnter * silent! source .profile.vim
 
+
+"set list
