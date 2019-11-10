@@ -1,42 +1,38 @@
 #!/bin/sh
 
-mkdir -p ${HOME}/.vim/autoload
-mkdir -p ${HOME}/.vim/conf.d
-
-wget -O ${HOME}/.vim/conf.d/a.vim \
-    https://raw.githubusercontent.com/chengxie/my-vimrc/master/conf.d/a.vim
-wget -O ${HOME}/.vim/conf.d/ctrlsf.vim \
+curl -fLo ${HOME}/.vim/conf.d/a.vim --create-dirs \
+	https://raw.githubusercontent.com/chengxie/my-vimrc/master/conf.d/a.vim
+curl -fLo ${HOME}/.vim/conf.d/ctrlsf.vim --create-dirs \
 	https://raw.githubusercontent.com/chengxie/my-vimrc/master/conf.d/ctrlsf.vim
-wget -O ${HOME}/.vim/conf.d/DoxygenToolkit.vim \
+curl -fLo ${HOME}/.vim/conf.d/DoxygenToolkit.vim --create-dirs \
 	https://raw.githubusercontent.com/chengxie/my-vimrc/master/conf.d/DoxygenToolkit.vim
-wget -O ${HOME}/.vim/conf.d/FlyGrep.vim \
+curl -fLo ${HOME}/.vim/conf.d/FlyGrep.vim --create-dirs \
 	https://raw.githubusercontent.com/chengxie/my-vimrc/master/conf.d/FlyGrep.vim
-wget -O ${HOME}/.vim/conf.d/LeaderF.vim \
+curl -fLo ${HOME}/.vim/conf.d/LeaderF.vim --create-dirs \
 	https://raw.githubusercontent.com/chengxie/my-vimrc/master/conf.d/LeaderF.vim
-wget -O ${HOME}/.vim/conf.d/nerdtree.vim \
+curl -fLo ${HOME}/.vim/conf.d/nerdtree.vim --create-dirs \
 	https://raw.githubusercontent.com/chengxie/my-vimrc/master/conf.d/nerdtree.vim
-wget -O ${HOME}/.vim/conf.d/tagbar.vim \
+curl -fLo ${HOME}/.vim/conf.d/tagbar.vim --create-dirs \
 	https://raw.githubusercontent.com/chengxie/my-vimrc/master/conf.d/tagbar.vim
-wget -O ${HOME}/.vim/conf.d/ultisnips.vim \
+curl -fLo ${HOME}/.vim/conf.d/ultisnips.vim --create-dirs \
 	https://raw.githubusercontent.com/chengxie/my-vimrc/master/conf.d/ultisnips.vim
-wget -O ${HOME}/.vim/conf.d/vim-airline.vim \
+curl -fLo ${HOME}/.vim/conf.d/vim-airline.vim --create-dirs \
 	https://raw.githubusercontent.com/chengxie/my-vimrc/master/conf.d/vim-airline.vim
-wget -O ${HOME}/.vim/conf.d/vim-gutentags.vim \
+curl -fLo ${HOME}/.vim/conf.d/vim-gutentags.vim --create-dirs \
 	https://raw.githubusercontent.com/chengxie/my-vimrc/master/conf.d/vim-gutentags.vim
-wget -O ${HOME}/.vim/conf.d/vim-instant-markdown.vim \
+curl -fLo ${HOME}/.vim/conf.d/vim-instant-markdown.vim --create-dirs \
 	https://raw.githubusercontent.com/chengxie/my-vimrc/master/conf.d/vim-instant-markdown.vim
-wget -O ${HOME}/.vim/conf.d/vim-protodef.vim \
+curl -fLo ${HOME}/.vim/conf.d/vim-protodef.vim --create-dirs \
 	https://raw.githubusercontent.com/chengxie/my-vimrc/master/conf.d/vim-protodef.vim
-wget -O ${HOME}/.vim/conf.d/vim-signature.vim \
+curl -fLo ${HOME}/.vim/conf.d/vim-signature.vim --create-dirs \
 	https://raw.githubusercontent.com/chengxie/my-vimrc/master/conf.d/vim-signature.vim
-wget -O ${HOME}/.vim/conf.d/YouCompleteMe.vim \
+curl -fLo ${HOME}/.vim/conf.d/YouCompleteMe.vim --create-dirs \
 	https://raw.githubusercontent.com/chengxie/my-vimrc/master/conf.d/YouCompleteMe.vim
 
-
-wget -O ${HOME}/.vimrc \
+curl -fLo ${HOME}/.vimrc --create-dirs \
     https://raw.githubusercontent.com/chengxie/my-vimrc/master/vimrc
 
-wget -O ${HOME}/.vim/autoload/plug.vim \
+curl -fLo ${HOME}/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 vim -c "PlugInstall" < /dev/tty

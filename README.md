@@ -3,4 +3,4 @@ Just my vimrc
 
 Usage:
 
-wget -O- https://raw.githubusercontent.com/chengxie/my-vimrc/master/install.sh | sh
+curl -fL https://raw.githubusercontent.com/chengxie/my-vimrc/master/install.sh | sh
