@@ -31,14 +31,14 @@ set fileencoding=utf-8				"多字节文本的文件编码
 set fileencodings=utf-8,gbk,big5	"参与自动检测的字符编码	
 set fileformat=unix					"文件输入输出使用的格式
 set fileformats=unix				"参与自动检测的 'fileformat' 的格式
-set background=dark                 " Setting dark mode
+set background=dark				 " Setting dark mode
 
 set term=$TERM "终端名
 if $TERM == 'xterm-256color'
-    set t_Co=256	"number of colors
+	set t_Co=256	"number of colors
 endif
 if $LC_TERMINAL == 'iTerm2' || has('win32unix') || has('gui_running')
-    set termguicolors
+	set termguicolors
 endif
 
 
@@ -118,9 +118,9 @@ Plug 'chengxie/vim-gutentags'
 
 "YouCompleteMe 自动补全, 语义分析
 if has('win32unix')
-	Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --skip-build' } 
+	Plug 'ycm-core/YouCompleteMe', { 'do': 'git submodule update --init --recursive' } 
 else
-    Plug 'ycm-core/YouCompleteMe', { 'do': 'python3 ./install.py --clang-completer --system-libclang --clang-tidy' }
+	Plug 'ycm-core/YouCompleteMe', { 'do': 'python3 ./install.py --clang-completer --system-libclang --clang-tidy' }
 endif
 
 "ycm_simple_conf 使用一个xml文件生成YouCompleteMe的配置
@@ -128,7 +128,7 @@ Plug 'chengxie/ycm_simple_conf', { 'for': [ 'cpp', 'c', 'objc' ] }
 
 "vim-instant-markdown
 if has('mac') || has('win32unix')
-    Plug 'suan/vim-instant-markdown', {'for': 'markdown' }
+	Plug 'suan/vim-instant-markdown', {'for': 'markdown' }
 endif
 
 
@@ -136,21 +136,21 @@ call plug#end()
 
 
 if isdirectory($HOME.'/.vim/plugged/vim-airline-themes')
-    let g:airline_theme='solarized'
+	let g:airline_theme='solarized'
 endif
 
 "if isdirectory($HOME.'/.vim/plugged/vim-material-monokai')
-    "let g:materialmonokai_subtle_spell=1
-    "let g:materialmonokai_subtle_airline=0
-    "let g:materialmonokai_custom_lint_indicators=0
-    "let g:airline_theme='materialmonokai'
-    "colorscheme material-monokai
+	"let g:materialmonokai_subtle_spell=1
+	"let g:materialmonokai_subtle_airline=0
+	"let g:materialmonokai_custom_lint_indicators=0
+	"let g:airline_theme='materialmonokai'
+	"colorscheme material-monokai
 "endif
 
 if isdirectory($HOME.'/.vim/plugged/my-vim-themes/colors')
-    colorscheme monokai
-    "colorscheme solarized
-    "colorscheme termcolor
+	colorscheme monokai
+	"colorscheme solarized
+	"colorscheme termcolor
 endif
 
 
@@ -293,14 +293,14 @@ let g:UltiSnipsSnippetDirectories=["mysnippets"] "UltiSnips
 "	A.vim 切换cpp,h
 "==============================================================
 function! s:a_switch_mapping()
-    nmap <buffer><silent><C-A>			:A!<CR>
-    nmap <buffer><silent><leader>asa	:ASA<CR>
-    nmap <buffer><silent><leader>asb	:ASB<CR>
-    nmap <buffer><silent><leader>avl	:AVL<CR>
-    nmap <buffer><silent><leader>avr	:AVR<CR>
+	nmap <buffer><silent><C-A>			:A!<CR>
+	nmap <buffer><silent><leader>asa	:ASA<CR>
+	nmap <buffer><silent><leader>asb	:ASB<CR>
+	nmap <buffer><silent><leader>avl	:AVL<CR>
+	nmap <buffer><silent><leader>avr	:AVR<CR>
 endfunction
 augroup my_a_switch
-    au! FileType cpp,c,objc call <SID>a_switch_mapping()
+	au! FileType cpp,c,objc call <SID>a_switch_mapping()
 augroup end
 
 
@@ -361,7 +361,7 @@ nmap tp :tprevious<CR>
 "set completeopt-=preview
 "set completeopt=longest,menu
 if has('win32unix')
-    let g:ycm_server_python_interpreter='/usr/bin/python3'
+	let g:ycm_server_python_interpreter='/usr/bin/python3'
 endif
 let g:ycm_confirm_extra_conf=1
 "开启语法引擎, 关键字补全
@@ -385,10 +385,10 @@ let g:ycm_goto_buffer_command='horizontal-split' "vertical
 "是否启用诊断提示
 let g:ycm_enable_diagnostic_signs=1
 if g:ycm_enable_diagnostic_signs == 1
-    set signcolumn=yes
-    highlight YcmErrorLine guibg=#3f0000
-    let g:ycm_enable_diagnostic_highlighting=1
-    let g:ycm_show_diagnostics_ui=1 
+	set signcolumn=yes
+	highlight YcmErrorLine guibg=#3f0000
+	let g:ycm_enable_diagnostic_highlighting=1
+	let g:ycm_show_diagnostics_ui=1 
 endif
 
 let g:ycm_add_preview_to_completeopt = 0
@@ -425,51 +425,51 @@ let g:ycm_filetype_whitelist = {
 "nnoremap <C-\>g :call TracyoneGotoDef("sp")<cr>
 
 function! TracyoneGotoDef(open_type)
-    let l:ycm_ret=s:YcmGotoDef(a:open_type)
-    if l:ycm_ret < 0
-        try
-            execute "cs find g ".expand("<cword>")
-        catch /^Vim\%((\a\+)\)\=:E/
-            call s:EchoWarning("cscope query failed")
-            if a:open_type != "" | wincmd q | endif
-            return -1
-        endtry
-    else
-        return 0
-    endif
-    return 0
+	let l:ycm_ret=s:YcmGotoDef(a:open_type)
+	if l:ycm_ret < 0
+		try
+			execute "cs find g ".expand("<cword>")
+		catch /^Vim\%((\a\+)\)\=:E/
+			call s:EchoWarning("cscope query failed")
+			if a:open_type != "" | wincmd q | endif
+			return -1
+		endtry
+	else
+		return 0
+	endif
+	return 0
 endfunction
 
 func! s:YcmGotoDef(open_type)
-    let l:cur_word=expand("<cword>")."\s*\(.*[^;]$"
-    :redir => l:msg
-    execute a:open_type
-    silent! execute ":YcmCompleter GoToDefinition"
-    :redir END
-    let l:rs=split(l:msg,'\r\n\|\n')
-    "make sure index valid
-    if get(l:rs,-1,3) !=3 && l:rs[-1] =~ 'Runtime.*'
-        :redir => l:msg
-        silent! execute ":YcmCompleter GoToDeclaration"
-        :redir END
-        let l:rs=split(l:msg,'\r\n\|\n')
-        if get(l:rs,-1,3) != 3 && l:rs[-1] !~ 'Runtime.*'
-            execute ":silent! A"
-            " search failed then go back
-            if search(l:cur_word) == 0
-                execute ":silent! A"
-                return -2
-            endif
-            return 3
-        elseif get(l:rs,-1,3) == 3 "not exist no error
-            return 0
-        else
-            return -3
-        endif
+	let l:cur_word=expand("<cword>")."\s*\(.*[^;]$"
+	:redir => l:msg
+	execute a:open_type
+	silent! execute ":YcmCompleter GoToDefinition"
+	:redir END
+	let l:rs=split(l:msg,'\r\n\|\n')
+	"make sure index valid
+	if get(l:rs,-1,3) !=3 && l:rs[-1] =~ 'Runtime.*'
+		:redir => l:msg
+		silent! execute ":YcmCompleter GoToDeclaration"
+		:redir END
+		let l:rs=split(l:msg,'\r\n\|\n')
+		if get(l:rs,-1,3) != 3 && l:rs[-1] !~ 'Runtime.*'
+			execute ":silent! A"
+			" search failed then go back
+			if search(l:cur_word) == 0
+				execute ":silent! A"
+				return -2
+			endif
+			return 3
+		elseif get(l:rs,-1,3) == 3 "not exist no error
+			return 0
+		else
+			return -3
+		endif
 
-    else
-        return 1
-    endif
+	else
+		return 1
+	endif
 endfunc
 
 
@@ -510,18 +510,18 @@ nmap <silent><C-X><C-J>	:cn<CR>
 " Zoom / Restore window.
 "==============================================================
 function! s:toggle_win_zoom() abort
-    if winnr('$') < 2
-        return
-    endif
-    if exists('t:zoomed') && t:zoomed
-        execute t:zoom_winrestcmd
-        let t:zoomed = 0
-    else
-        let t:zoom_winrestcmd = winrestcmd()
-        resize
-        vertical resize
-        let t:zoomed = 1
-    endif
+	if winnr('$') < 2
+		return
+	endif
+	if exists('t:zoomed') && t:zoomed
+		execute t:zoom_winrestcmd
+		let t:zoomed = 0
+	else
+		let t:zoom_winrestcmd = winrestcmd()
+		resize
+		vertical resize
+		let t:zoomed = 1
+	endif
 endfunction
 nnoremap <silent><leader>z :call <SID>toggle_win_zoom()<CR>
 
@@ -551,7 +551,7 @@ function! s:on_filetype_cpp() abort
 	nmap <Leader>man :Man 3 <cword><CR>	
 	inoremap {<CR> 		{}<Left><CR><ESC>ko
 	"新开窗口显示 ctags
-	nmap <C-\>		    <C-W><C-]>
+	nmap <C-\>			<C-W><C-]>
 	setlocal foldenable foldmethod=syntax
 	normal! zR
 endfunction
@@ -579,7 +579,7 @@ nmap <TAB>		<C-W>l
 nmap <C-J>		<C-W>j
 nmap <C-K>		<C-W>k
 "c-bs do nothing
-imap 		    <BS>	
+imap 			<BS>	
 "将winows换行符替换为unix换行符
 nmap <silent><F8>	<ESC>:%s/\r\n/\r/g<CR><ESC>:w<CR><ESC>:%s/\r/\r/g<CR>
 "光标所在单词的全文替换
