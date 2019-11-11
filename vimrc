@@ -119,10 +119,19 @@ Plug 'ycm-core/YouCompleteMe', { 'do': 'python3 ./install.py --clang-completer -
 "ycm_simple_conf 使用一个xml文件生成YouCompleteMe的配置
 Plug 'chengxie/ycm_simple_conf', { 'for': [ 'cpp', 'c', 'objc' ] }
 
+"代码自动对齐
+Plug 'godlygeek/tabular'
+
 "vim-instant-markdown
 if has('mac') || has('win32unix')
+	"markdown语法高亮, 必须在tabular之后加载
+	Plug 'plasticboy/vim-markdown', {'for': 'markdown' }
+	"markdown目录链接自动生成,支持 GFM 和 Redcarpet 两种链接风格
+	Plug 'mzlogin/vim-markdown-toc', {'for': 'markdown' }
+	"markdown即时预览
 	Plug 'suan/vim-instant-markdown', {'for': 'markdown' }
 endif
+
 
 call plug#end()
 
