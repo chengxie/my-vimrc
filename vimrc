@@ -121,20 +121,10 @@ Plug 'chengxie/ycm_simple_conf', { 'for': [ 'cpp', 'c', 'objc' ] }
 
 "vim-instant-markdown
 if has('mac') || has('win32unix')
-	" markdown 即时预览编辑
 	Plug 'suan/vim-instant-markdown', {'for': 'markdown' }
 endif
 
-" 有道翻译
-Plug 'iamcco/dict.vim'
-
 call plug#end()
-
-"加载所有插件配置
-let s:cnflist = split(globpath('~/.vim/conf.d', '*.vim'), '\n')
-for cnf in s:cnflist
-	exec 'silent! source '.cnf
-endfor
 
 
 "设置airline主题
@@ -156,6 +146,14 @@ endif
 	"let g:airline_theme='materialmonokai'
 	"colorscheme material-monokai
 "endif
+
+"加载所有插件配置,必须在设置过配色方案之后,
+"否则配色方案会覆盖某些插件中设置的特定高亮颜色
+let s:cnflist = split(globpath('~/.vim/conf.d', '*.vim'), '\n')
+for cnf in s:cnflist
+	exec 'silent! source '.cnf
+endfor
+
 
 
 "==============================================================
@@ -250,11 +248,10 @@ imap 			<BS>
 "将winows换行符替换为unix换行符
 nmap <silent><F8>	<ESC>:%s/\r\n/\r/g<CR><ESC>:w<CR><ESC>:%s/\r/\r/g<CR>
 "光标所在单词的全文替换
-"nmap <F10>	#:%s/<C-R>=expand("<cword>")<CR>//g<Left><Left>
+nmap <F10>	#:%s/<C-R>=expand("<cword>")<CR>//g<Left><Left>
 "清除搜索高亮
-"nmap <silent><F11>	:nohl<CR>
+nmap <silent><F11>	:nohl<CR>
 
 "let map_leader=","
-
 
 
