@@ -1,39 +1,38 @@
 #!/bin/sh
+VIM_PLUG_URL="https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
+URL_PREFIX="https://raw.githubusercontent.com/chengxie/my-vimrc/master"
+FILE_LIST=(
+conf.d/vim-gutentags.vim
+conf.d/tagbar.vim
+conf.d/vim-airline.vim
+conf.d/YouCompleteMe.vim
+conf.d/FlyGrep.vim
+conf.d/DoxygenToolkit.vim
+conf.d/nerdtree.vim
+conf.d/vim-instant-markdown.vim
+conf.d/vim-protodef.vim
+conf.d/a.vim
+conf.d/ultisnips.vim
+conf.d/vim-signature.vim
+conf.d/LeaderF.vim
+conf.d/ctrlsf.vim
+)
 
-curl -fLo ${HOME}/.vim/conf.d/a.vim --create-dirs \
-	https://raw.githubusercontent.com/chengxie/my-vimrc/master/conf.d/a.vim
-curl -fLo ${HOME}/.vim/conf.d/ctrlsf.vim --create-dirs \
-	https://raw.githubusercontent.com/chengxie/my-vimrc/master/conf.d/ctrlsf.vim
-curl -fLo ${HOME}/.vim/conf.d/DoxygenToolkit.vim --create-dirs \
-	https://raw.githubusercontent.com/chengxie/my-vimrc/master/conf.d/DoxygenToolkit.vim
-curl -fLo ${HOME}/.vim/conf.d/FlyGrep.vim --create-dirs \
-	https://raw.githubusercontent.com/chengxie/my-vimrc/master/conf.d/FlyGrep.vim
-curl -fLo ${HOME}/.vim/conf.d/LeaderF.vim --create-dirs \
-	https://raw.githubusercontent.com/chengxie/my-vimrc/master/conf.d/LeaderF.vim
-curl -fLo ${HOME}/.vim/conf.d/nerdtree.vim --create-dirs \
-	https://raw.githubusercontent.com/chengxie/my-vimrc/master/conf.d/nerdtree.vim
-curl -fLo ${HOME}/.vim/conf.d/tagbar.vim --create-dirs \
-	https://raw.githubusercontent.com/chengxie/my-vimrc/master/conf.d/tagbar.vim
-curl -fLo ${HOME}/.vim/conf.d/ultisnips.vim --create-dirs \
-	https://raw.githubusercontent.com/chengxie/my-vimrc/master/conf.d/ultisnips.vim
-curl -fLo ${HOME}/.vim/conf.d/vim-airline.vim --create-dirs \
-	https://raw.githubusercontent.com/chengxie/my-vimrc/master/conf.d/vim-airline.vim
-curl -fLo ${HOME}/.vim/conf.d/vim-gutentags.vim --create-dirs \
-	https://raw.githubusercontent.com/chengxie/my-vimrc/master/conf.d/vim-gutentags.vim
-curl -fLo ${HOME}/.vim/conf.d/vim-instant-markdown.vim --create-dirs \
-	https://raw.githubusercontent.com/chengxie/my-vimrc/master/conf.d/vim-instant-markdown.vim
-curl -fLo ${HOME}/.vim/conf.d/vim-protodef.vim --create-dirs \
-	https://raw.githubusercontent.com/chengxie/my-vimrc/master/conf.d/vim-protodef.vim
-curl -fLo ${HOME}/.vim/conf.d/vim-signature.vim --create-dirs \
-	https://raw.githubusercontent.com/chengxie/my-vimrc/master/conf.d/vim-signature.vim
-curl -fLo ${HOME}/.vim/conf.d/YouCompleteMe.vim --create-dirs \
-	https://raw.githubusercontent.com/chengxie/my-vimrc/master/conf.d/YouCompleteMe.vim
+download() {
+	for ((i=0; i<${#FILE_LIST[@]}; ++i)); do
+		local filename=${FILE_LIST[i]}
+		echo ${URL_PREFIX}/${filename}
+		curl -#SfLo ${HOME}/.vim/${filename} --create-dirs ${URL_PREFIX}/${filename}
+	done
+}
 
-curl -fLo ${HOME}/.vimrc --create-dirs \
-    https://raw.githubusercontent.com/chengxie/my-vimrc/master/vimrc
+download
 
-curl -fLo ${HOME}/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+echo ${URL_PREFIX}/vimrc
+curl -#SfLo ${HOME}/.vimrc --create-dirs ${URL_PREFIX}/vimrc
+
+echo $VIM_PLUG_URL
+curl -#SfLo ${HOME}/.vim/autoload/plug.vim --create-dirs ${VIM_PLUG_URL}
 
 vim -c "PlugInstall" < /dev/tty
 
