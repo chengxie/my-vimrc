@@ -121,8 +121,12 @@ Plug 'chengxie/ycm_simple_conf', { 'for': [ 'cpp', 'c', 'objc' ] }
 
 "vim-instant-markdown
 if has('mac') || has('win32unix')
+	" markdown 即时预览编辑
 	Plug 'suan/vim-instant-markdown', {'for': 'markdown' }
 endif
+
+" 有道翻译
+Plug 'iamcco/dict.vim'
 
 call plug#end()
 
@@ -246,10 +250,11 @@ imap 			<BS>
 "将winows换行符替换为unix换行符
 nmap <silent><F8>	<ESC>:%s/\r\n/\r/g<CR><ESC>:w<CR><ESC>:%s/\r/\r/g<CR>
 "光标所在单词的全文替换
-nmap <F10>	#:%s/<C-R>=expand("<cword>")<CR>//g<Left><Left>
+"nmap <F10>	#:%s/<C-R>=expand("<cword>")<CR>//g<Left><Left>
 "清除搜索高亮
-nmap <silent><F11>	:nohl<CR>
+"nmap <silent><F11>	:nohl<CR>
 
 "let map_leader=","
+
 
 

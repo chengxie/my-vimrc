@@ -14,6 +14,7 @@ conf.d/vim-protodef.vim
 conf.d/a.vim
 conf.d/ultisnips.vim
 conf.d/vim-signature.vim
+conf.d/dict.vim
 conf.d/LeaderF.vim
 conf.d/ctrlsf.vim
 )

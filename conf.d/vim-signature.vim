@@ -1,6 +1,29 @@
 "==============================================================
 "	vim-signature 书签
 "==============================================================
+"let g:SignatureMap = {
+			"\ 'Leader'             :  "m",
+			"\ 'PlaceNextMark'      :  "m,",
+			"\ 'ToggleMarkAtLine'   :  "m.",
+			"\ 'PurgeMarksAtLine'   :  "m-",
+			"\ 'DeleteMark'         :  "dm",
+			"\ 'PurgeMarks'         :  "m<Space>",
+			"\ 'PurgeMarkers'       :  "m<BS>",
+			"\ 'GotoNextLineAlpha'  :  "']",
+			"\ 'GotoPrevLineAlpha'  :  "'[",
+			"\ 'GotoNextSpotAlpha'  :  "`]",
+			"\ 'GotoPrevSpotAlpha'  :  "`[",
+			"\ 'GotoNextLineByPos'  :  "]'",
+			"\ 'GotoPrevLineByPos'  :  "['",
+			"\ 'GotoNextSpotByPos'  :  "]`",
+			"\ 'GotoPrevSpotByPos'  :  "[`",
+			"\ 'GotoNextMarker'     :  "]-",
+			"\ 'GotoPrevMarker'     :  "[-",
+			"\ 'GotoNextMarkerAny'  :  "]=",
+			"\ 'GotoPrevMarkerAny'  :  "[=",
+			"\ 'ListBufferMarks'    :  "m/",
+			"\ 'ListBufferMarkers'  :  "m?"
+			"\ }
 highlight bookmark_color ctermbg=137 ctermfg=235 guibg=grey guifg=RoyalBlue3
 highlight SignatureMarkText guifg=red
 highlight SignatureMarkLine guibg=royalblue4 
