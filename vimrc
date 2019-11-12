@@ -132,6 +132,8 @@ if has('mac') || has('win32unix')
 	Plug 'suan/vim-instant-markdown', {'for': 'markdown' }
 endif
 
+"有道翻译
+Plug 'iamcco/dict.vim'
 
 call plug#end()
 
