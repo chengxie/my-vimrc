@@ -12,11 +12,12 @@ set showmatch		"插入括号时短暂跳转到匹配的括号
 set incsearch		"输入搜索模式时同时高亮部分的匹配
 set nofoldenable	"默认关闭折叠
 set nobackup		"覆盖文件时不保留备份文件
-set nowrap 			"禁止自动换行
+set nowrap			"禁止自动换行
 set ruler			"显示光标当前位置
 set number			"开启行号显示
 set cursorline		"高亮显示当前行
-set hlsearch 		"高亮显示搜索结果 
+set hlsearch		"高亮显示搜索结果 
+set wildmenu		"打开命令补全菜单
 set tabstop=4		"编辑时<Tab>占用空格数
 set shiftwidth=4	"格式化时<Tab>占用空格数
 set softtabstop=4	"将连续数量的空格视为一个<Tab>
@@ -221,7 +222,7 @@ endfunction
 function! s:on_filetype_cpp() abort	
 	source $VIMRUNTIME/ftplugin/man.vim
 	nmap <Leader>man :Man 3 <cword><CR>	
-	inoremap {<CR> 		{}<Left><CR><ESC>ko
+	inoremap {<CR>		{}<Left><CR><ESC>ko
 	"新开窗口显示 ctags
 	nmap <C-\>			<C-W><C-]>
 	setlocal foldenable foldmethod=syntax
@@ -264,5 +265,4 @@ nmap <F10>	#:%s/<C-R>=expand("<cword>")<CR>//g<Left><Left>
 nmap <silent><F11>	:nohl<CR>
 
 "let map_leader=","
-
 
