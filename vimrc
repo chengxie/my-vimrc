@@ -115,10 +115,10 @@ Plug 'derekwyatt/vim-protodef', { 'for': [ 'cpp', 'c', 'objc' ] }
 Plug 'chengxie/vim-gutentags'
 
 "YouCompleteMe 自动补全, 语义分析
-Plug 'ycm-core/YouCompleteMe', { 'do': 'python3 ./install.py --clang-completer --system-libclang' }
+Plug 'ycm-core/YouCompleteMe', { 'do': 'python3 ./install.py --clang-completer --system-libclang', 'for': [ 'cpp', 'c', 'objc' ] }
 
 "ycm_simple_conf 使用一个xml文件生成YouCompleteMe的配置
-Plug 'chengxie/ycm_simple_conf', { 'for': [ 'cpp', 'c', 'objc' ] }
+Plug 'chengxie/ycm_simple_conf'
 
 "代码自动对齐
 Plug 'godlygeek/tabular'
