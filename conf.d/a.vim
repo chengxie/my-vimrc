@@ -1,6 +1,7 @@
 "==============================================================
 "	A.vim 切换cpp,h
 "==============================================================
+let g:alternateExtensions_{'h'} = "cpp,cxx,cc,CC,c"
 function! s:a_switch_mapping()
 	nmap <buffer><silent><C-A>			:A!<CR>
 	nmap <buffer><silent><leader>asa	:ASA<CR>

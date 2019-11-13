@@ -16,3 +16,6 @@ let g:DoxygenToolkit_undocTag="DOXIGEN_SKIP_BLOCK"
 let g:DoxygenToolkit_compactDoc = "yes"
 "let g:DoxygenToolkit_licenseTag="My own license"   <-- !!! Does not end with "\<enter>"
 
+augroup my_augroup_DoxygenToolkit
+	au! BufNewFile *.h,*.hpp,*.c,*.cpp,*.cc*.m,*.mm exec "DoxAuthor"
+augroup end

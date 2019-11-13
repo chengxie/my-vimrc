@@ -66,9 +66,6 @@ Plug 'ryanoasis/vim-devicons', { 'on': [ 'NERDTreeToggle', 'NERDTreeFind' ] }
 "NERDTree插件，在NERDTree中为文件扩展名添加语法高亮, 配合vim-devicons显示icon
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight', { 'on': [ 'NERDTreeToggle', 'NERDTreeFind' ] }
 
-"NERDTree插件，在NERDTree中显示git状态
-Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': [ 'NERDTreeToggle', 'NERDTreeFind' ] }
-
 "LeaderF 文件模糊查找
 Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
 
@@ -76,10 +73,10 @@ Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
 Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
 
 "FlyGrep 全文即时搜索
-Plug 'wsdjeg/FlyGrep.vim'
+Plug 'wsdjeg/FlyGrep.vim', { 'on': 'FlyGrep' }
 
 "CtrlSF 全文搜索
-Plug 'dyng/ctrlsf.vim'
+Plug 'dyng/ctrlsf.vim', { 'on': [ 'CtrlSF', 'CtrlSFToggle' ] }
 
 "多选光标，多处替换
 Plug 'terryma/vim-multiple-cursors'
@@ -88,16 +85,16 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'scrooloose/nerdcommenter'
 
 "DoxygenToolkit
-Plug 'chengxie/DoxygenToolkit.vim'
+Plug 'chengxie/DoxygenToolkit.vim', { 'for': [ 'cpp', 'c', 'objc', 'php', 'python' ] }
 
 "书签
 Plug 'kshenoy/vim-signature'
 
 "模版补全,需要python3.7+支持
-Plug 'SirVer/ultisnips'
+Plug 'SirVer/ultisnips', { 'for': [ 'cpp', 'c', 'objc' ] }
 
 "my vim snippets for ultisnips
-Plug 'chengxie/my-vim-snippets'
+Plug 'chengxie/my-vim-snippets', { 'for': [ 'cpp', 'c', 'objc' ] }
 
 "c++语法高亮, 支持stl库关键字
 Plug 'octol/vim-cpp-enhanced-highlight', { 'for': [ 'cpp', 'c' ] }
@@ -240,7 +237,6 @@ function! s:on_filetype_python() abort
 endfunction
 
 augroup my_augroup
-	au! BufNewFile *.h,*.hpp,*.c,*.cpp,*.cc*.m,*.mm exec "DoxAuthor"
 	au! FileType cpp,c,php,javascript,objc,cs call <SID>on_filetype_cpp()
 	au! FileType python call <SID>on_filetype_python()
 	"重新打开文件时光标回到最后编辑的位置
@@ -260,9 +256,9 @@ imap 			<BS>
 "将winows换行符替换为unix换行符
 nmap <silent><F8>	<ESC>:%s/\r\n/\r/g<CR><ESC>:w<CR><ESC>:%s/\r/\r/g<CR>
 "光标所在单词的全文替换
-nmap <F10>	#:%s/<C-R>=expand("<cword>")<CR>//g<Left><Left>
+"nmap <F10>	#:%s/<C-R>=expand("<cword>")<CR>//g<Left><Left>
 "清除搜索高亮
-nmap <silent><F11>	:nohl<CR>
+"nmap <silent><F11>	:nohl<CR>
 
 "let map_leader=","
 
