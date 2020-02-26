@@ -38,7 +38,7 @@ let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_filetype_whitelist = {
 			\ "c":1, "cpp":1, "objc":1,
 			\ "sh":1, "zsh":1,
-			\ "lua":1, "php":1,
+			\ "lua":1, "php":1, "python":1,
 			\ "javascript":1, "css":1, "html":1,
 			\ }
 "映射按键
