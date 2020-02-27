@@ -90,6 +90,79 @@ nmap <silent><C-X><C-J>	:cn<CR>
 function! s:toggle_win_zoom() abort
 	if winnr('$') < 2
 		return
+	endif
+	if exists('t:zoomed') && t:zoomed
+		execute t:zoom_winrestcmd
+		let t:zoomed = 0
+	else
+		let t:zoom_winrestcmd = winrestcmd()
+		resize
+		vertical resize
+		let t:zoomed = 1
+	endif
+endfunction
+nnoremap <silent><leader>z :call <SID>toggle_win_zoom()<CR>
 
 
+"==============================================================
+"	全局自动命令相关函数
+"==============================================================
+function! s:win_count_by_type(type) abort
+	let i = 0
+	let c = -1
+	while i < winnr('$')
+		if getbufvar(winbufnr(i + 1), '&buftype') == a:type
+			let c = i + 1
+			break
+		endif
+		let i = i + 1
+	endwhile
+	return c
+endfunction
+
+function! s:on_filetype_cpp() abort	
+	source $VIMRUNTIME/ftplugin/man.vim
+	nmap <Leader>man :Man 3 <cword><CR>	
+	inoremap {<CR>		{}<Left><CR><ESC>ko
+	"新开窗口显示 ctags
+	nmap <C-\>			<C-W><C-]>
+	setlocal foldenable foldmethod=syntax
+	normal! zR
+endfunction
+
+function! s:on_filetype_python() abort	
+	setlocal tabstop=4		"编辑时<Tab>占用空格数
+	setlocal shiftwidth=4	"格式化时<Tab>占用空格数
+	setlocal softtabstop=4	"将连续数量的空格视为一个<Tab>
+	setlocal expandtab		"将<Tab>转换成空格
+	setlocal smarttab		"插入<Tab>时使用 'shiftwidth'
+	setlocal foldenable foldmethod=indent
+	normal! zR
+endfunction
+
+augroup my_augroup
+	au! FileType cpp,c,php,javascript,objc,cs call <SID>on_filetype_cpp()
+	au! FileType python call <SID>on_filetype_python()
+	"重新打开文件时光标回到最后编辑的位置
+	au! BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g'\"zz" | endif
+augroup end
+
+
+"==============================================================
+" 全局按键映射
+"==============================================================
+nmap <BS>		<C-W>h
+nmap <TAB>		<C-W>l
+nmap <C-J>		<C-W>j
+nmap <C-K>		<C-W>k
+"c-bs do nothing
+imap 			<BS>	
+"将winows换行符替换为unix换行符
+nmap <silent><F8>	<ESC>:%s/\r\n/\r/g<CR><ESC>:w<CR><ESC>:%s/\r/\r/g<CR>
+"光标所在单词的全文替换
+"nmap <F10>	#:%s/<C-R>=expand("<cword>")<CR>//g<Left><Left>
+"清除搜索高亮
+"nmap <silent><F11>	:nohl<CR>
+
+"let map_leader=","
 

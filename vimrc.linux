@@ -4,7 +4,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'yianwillis/vimcdoc'
 
 "my vim themes
-Plug 'chengxie/my-vim-themes'
+"Plug 'chengxie/my-vim-themes'
 
 "monokai主题
 Plug 'chengxie/vim-material-monokai'
@@ -13,7 +13,7 @@ Plug 'chengxie/vim-material-monokai'
 Plug 'vim-airline/vim-airline'
 
 "airline 配色主题
-Plug 'vim-airline/vim-airline-themes'
+"Plug 'vim-airline/vim-airline-themes'
 
 "NERDTree 文件管理器
 Plug 'scrooloose/nerdtree', { 'on': [ 'NERDTreeToggle', 'NERDTreeFind' ] }
