@@ -31,7 +31,7 @@ if g:ycm_enable_diagnostic_signs == 1
 	let g:ycm_enable_diagnostic_highlighting=1
 	let g:ycm_show_diagnostics_ui=1 
 endif
-
+let g:ycm_disable_for_files_larger_than_kb = 0
 let g:ycm_add_preview_to_completeopt = 0
 let g:ycm_autoclose_preview_window_after_completion=1
 "autocmd User YcmQuickFixOpened cclose
