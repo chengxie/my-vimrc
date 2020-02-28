@@ -1,12 +1,8 @@
 #!/bin/bash
-SYSTEM=$1
-if [ -z $SYSTEM ] || [ $SYSTEM != 'mac' -a $SYSTEM != 'linux' ]; then
-	exit 0
-fi
 
 VIM_PLUG_URL="https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
 URL_PREFIX="https://raw.githubusercontent.com/chengxie/my-vimrc/master"
-FILE_LIST=(
+cnf_list=(
 conf.d/vim-gutentags.vim
 conf.d/tagbar.vim
 conf.d/vim-airline.vim
@@ -24,22 +20,24 @@ conf.d/LeaderF.vim
 conf.d/ctrlsf.vim
 )
 
-download() {
-	for ((i=0; i<${#FILE_LIST[@]}; ++i)); do
-		local filename=${FILE_LIST[i]}
+download_cnf() {
+	for ((i=0; i<${#cnf_list[@]}; ++i)); do
+		local filename=${cnf_list[i]}
 		echo ${URL_PREFIX}/${filename}
 		curl -#SfLo ${HOME}/.vim/${filename} --create-dirs ${URL_PREFIX}/${filename}
 	done
-	curl -#SfLo ${HOME}/.vim/vimrc --create-dirs ${URL_PREFIX}/vimrc
 }
 
-download
+echo ${URL_PREFIX}/vimrc
+curl -#SfLo ${HOME}/.vimrc --create-dirs ${URL_PREFIX}/vimrc
 
-echo ${URL_PREFIX}/vimrc.${SYSTEM}
-curl -#SfLo ${HOME}/.vimrc --create-dirs ${URL_PREFIX}/vimrc.${SYSTEM}
+echo ${URL_PREFIX}/plug_conf.vim
+curl -#SfLo ${HOME}/.vim/plug_conf.vim --create-dirs ${URL_PREFIX}/plug_conf.vim
 
 echo $VIM_PLUG_URL
 curl -#SfLo ${HOME}/.vim/autoload/plug.vim --create-dirs ${VIM_PLUG_URL}
+
+download_cnf
 
 vim -c "PlugInstall" < /dev/tty
 

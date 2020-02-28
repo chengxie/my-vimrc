@@ -39,26 +39,17 @@ if $LC_TERMINAL == 'iTerm2' || has('win32unix') || has('gui_running')
 	set termguicolors
 endif
 
+"加载插件管理器
+exec 'silent! source '.$HOME.'/.vim/plug_conf.vim'
 
-"设置airline主题
-if isdirectory($HOME.'/.vim/plugged/vim-airline-themes')
-	let g:airline_theme='solarized'
+"加载配色方案
+if isdirectory($HOME.'/.vim/plugged/vim-material-monokai')
+	let g:materialmonokai_subtle_spell=1
+	let g:materialmonokai_subtle_airline=0
+	let g:materialmonokai_custom_lint_indicators=0
+	let g:airline_theme='materialmonokai'
+	colorscheme material-monokai
 endif
-
-"设置配色方案
-if isdirectory($HOME.'/.vim/plugged/my-vim-themes/colors')
-	colorscheme monokai
-	"colorscheme solarized
-	"colorscheme termcolor
-endif
-
-"if isdirectory($HOME.'/.vim/plugged/vim-material-monokai')
-	"let g:materialmonokai_subtle_spell=1
-	"let g:materialmonokai_subtle_airline=0
-	"let g:materialmonokai_custom_lint_indicators=0
-	"let g:airline_theme='materialmonokai'
-	"colorscheme material-monokai
-"endif
 
 "加载所有插件配置,必须在设置过配色方案之后,
 "否则配色方案会覆盖某些插件中设置的特定高亮颜色

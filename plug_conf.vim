@@ -3,26 +3,20 @@ call plug#begin('~/.vim/plugged')
 "中文手册
 Plug 'yianwillis/vimcdoc'
 
-"my vim themes
-"Plug 'chengxie/my-vim-themes'
-
 "monokai主题
 Plug 'chengxie/vim-material-monokai'
 
 "airline
 Plug 'vim-airline/vim-airline'
 
-"airline 配色主题
-"Plug 'vim-airline/vim-airline-themes'
-
 "NERDTree 文件管理器
 Plug 'scrooloose/nerdtree', { 'on': [ 'NERDTreeToggle', 'NERDTreeFind' ] }
 
-"NERDTree插件，在NERDTree中根据文件类型显示icon
-Plug 'ryanoasis/vim-devicons', { 'on': [ 'NERDTreeToggle', 'NERDTreeFind' ] }
-
 "NERDTree插件，在NERDTree中为文件扩展名添加语法高亮, 配合vim-devicons显示icon
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight', { 'on': [ 'NERDTreeToggle', 'NERDTreeFind' ] }
+
+"NERDTree插件，在NERDTree中根据文件类型显示icon
+Plug 'ryanoasis/vim-devicons'
 
 "LeaderF 文件模糊查找
 Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
@@ -49,10 +43,10 @@ Plug 'chengxie/DoxygenToolkit.vim', { 'for': [ 'cpp', 'c', 'objc', 'php', 'pytho
 Plug 'kshenoy/vim-signature'
 
 "模版补全,需要python3.7+支持
-Plug 'SirVer/ultisnips', { 'for': [ 'cpp', 'c', 'objc' ] }
+Plug 'SirVer/ultisnips'
 
 "my vim snippets for ultisnips
-Plug 'chengxie/my-vim-snippets', { 'for': [ 'cpp', 'c', 'objc' ] }
+Plug 'chengxie/my-vim-snippets'
 
 "c++语法高亮, 支持stl库关键字
 Plug 'octol/vim-cpp-enhanced-highlight', { 'for': [ 'cpp', 'c' ] }
@@ -66,17 +60,24 @@ Plug 'derekwyatt/vim-fswitch'
 "由接口快速生成实现框架, 依赖vim-fswitch
 Plug 'derekwyatt/vim-protodef', { 'for': [ 'cpp', 'c', 'objc' ] }
 
+"代码自动对齐
+Plug 'godlygeek/tabular'
+
 "gutentags ctags 管理器
 Plug 'chengxie/vim-gutentags'
-
-"YouCompleteMe 自动补全, 语义分析
-Plug 'ycm-core/YouCompleteMe', { 'do': 'python3 ./install.py --clang-completer --system-libclang', 'for': [ 'cpp', 'c', 'objc', 'python', 'php', 'lua', 'javascript', 'css', 'html', 'sh', 'bash', 'zsh' ] }
 
 "ycm_simple_conf 使用一个xml文件生成YouCompleteMe的配置
 Plug 'chengxie/ycm_simple_conf'
 
-"代码自动对齐
-Plug 'godlygeek/tabular'
+"有道翻译
+Plug 'iamcco/dict.vim'
+
+"YouCompleteMe 自动补全, 语义分析
+if has('mac') || has('win32unix')
+	Plug 'ycm-core/YouCompleteMe', { 'do': 'python3 ./install.py --clang-completer --system-libclang' }
+else
+	Plug 'ycm-core/YouCompleteMe', { 'do': 'python3 ./install.py --clang-completer' }
+endif
 
 "vim-instant-markdown
 if has('mac') || has('win32unix')
@@ -88,10 +89,5 @@ if has('mac') || has('win32unix')
 	Plug 'suan/vim-instant-markdown', {'for': 'markdown' }
 endif
 
-"有道翻译
-Plug 'iamcco/dict.vim'
-
 call plug#end()
-
-exec 'silent! source ~/.vim/vimrc'
 

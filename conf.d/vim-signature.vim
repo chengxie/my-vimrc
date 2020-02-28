@@ -33,4 +33,5 @@ highlight SignatureMarkerLine guibg=red4
 "let g:SignatureMarkerTextHLDynamic=1
 "let g:SignatureMarkerLineHL='bookmark_color'
 "let g:SignatureMarkLineHL='bookmark_color'
-
+"highlight clear SignColumn 
+set scl=auto
