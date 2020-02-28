@@ -6,6 +6,9 @@ Usage:
 curl -#SfL https://raw.githubusercontent.com/chengxie/my-vimrc/master/install.sh | bash
 ```
 
+
+快捷键说明:
+```
 <F2>	开关TagList函数列表窗口
 <F3>	开关QuickFix窗口
 <F4>	针对光标所在行设置或删除书签
@@ -24,4 +27,4 @@ F		全文搜索光标所在的单词
 ;		开关树状文件列表
 \q		关闭当前buffer
 :bd		关闭当前buffer
-
+```
