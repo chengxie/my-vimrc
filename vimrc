@@ -61,7 +61,7 @@ endfor
 
 
 "==============================================================
-"F9 QuickFix 相关
+"F3 QuickFix 相关
 "==============================================================
 function! s:toggle_quickfix() abort
 	if <SID>win_count_by_type('quickfix') == -1
@@ -70,7 +70,7 @@ function! s:toggle_quickfix() abort
 		cclose
 	endif
 endfunction
-nmap <silent><F9>	:call <SID>toggle_quickfix()<CR>
+nmap <silent><F3>	:call <SID>toggle_quickfix()<CR>
 nmap <silent><C-X><C-K>	:cp<CR>
 nmap <silent><C-X><C-J>	:cn<CR>
 

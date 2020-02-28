@@ -35,3 +35,7 @@ highlight SignatureMarkerLine guibg=red4
 "let g:SignatureMarkLineHL='bookmark_color'
 "highlight clear SignColumn 
 set scl=auto
+
+nmap <F4>	m.
+nmap <F5>	['
+nmap <F6>	]'

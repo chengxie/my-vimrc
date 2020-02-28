@@ -48,6 +48,9 @@ Plug 'SirVer/ultisnips'
 "my vim snippets for ultisnips
 Plug 'chengxie/my-vim-snippets'
 
+"缩进线
+Plug 'Yggdroot/indentLine'
+
 "c++语法高亮, 支持stl库关键字
 Plug 'octol/vim-cpp-enhanced-highlight', { 'for': [ 'cpp', 'c' ] }
 
