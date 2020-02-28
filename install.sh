@@ -18,6 +18,7 @@ conf.d/vim-signature.vim
 conf.d/dict.vim
 conf.d/LeaderF.vim
 conf.d/ctrlsf.vim
+conf.d/indentLine.vim
 )
 
 download_cnf() {
