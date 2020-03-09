@@ -155,5 +155,4 @@ nmap <silent><F8>	<ESC>:%s/\r\n/\r/g<CR><ESC>:w<CR><ESC>:%s/\r/\r/g<CR>
 "清除搜索高亮
 "nmap <silent><F11>	:nohl<CR>
 
-"let map_leader=","
 
