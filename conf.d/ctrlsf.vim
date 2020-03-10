@@ -14,7 +14,12 @@ let g:ctrlsf_mapping = {
 			\ "popen": "",
 			\ "popenf": "",
 			\ }
+
+function! s:ctrlsf_find_by_filetype()
+	exec 'CtrlSF -filetype ' . &filetype . ' ' . expand("<cword>")
+endfunction
+
 nmap <silent>f :CtrlSFToggle<CR>
-nmap <silent>F :CtrlSF<CR>	
-nmap <silent><F3> :CtrlSF<CR>
+nmap <silent>F	:call <SID>ctrlsf_find_by_filetype()<CR>
+nmap <silent><F3> :call <SID>ctrlsf_find_by_filetype()<CR>
 ":CtrlSFFocus<CR>
