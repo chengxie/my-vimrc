@@ -12,7 +12,7 @@ let g:ycm_collect_identifiers_from_tags_files=1
 "从字符串和注释中收集标识符用于补全, 否
 let g:ycm_collect_identifiers_from_comments_and_strings=0
 "禁止缓存匹配项,每次都重新生成匹配项
-let g:ycm_cache_omnifunc=0
+let g:ycm_cache_omnifunc=1
 "在注释中也开启补全,否 
 let g:ycm_complete_in_comments=0
 "字符串中也开启补全,否
