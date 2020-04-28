@@ -6,7 +6,7 @@ cnf_list=(
 conf.d/vim-gutentags.vim
 conf.d/tagbar.vim
 conf.d/vim-airline.vim
-conf.d/YouCompleteMe.vim
+conf.d/neocomplete.vim
 conf.d/FlyGrep.vim
 conf.d/DoxygenToolkit.vim
 conf.d/nerdtree.vim
@@ -42,8 +42,3 @@ download_cnf
 
 vim -c "PlugInstall" < /dev/tty
 
-case $(uname -s) in
-        CYGWIN*)
-			rm -f ${HOME}/.vim/plugged/YouCompleteMe/third_party/ycmd/third_party/clang/lib/libclang.dll.a
-			;;
-esac
