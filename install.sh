@@ -6,7 +6,7 @@ cnf_list=(
 conf.d/vim-gutentags.vim
 conf.d/tagbar.vim
 conf.d/vim-airline.vim
-conf.d/neocomplete.vim
+conf.d/YouCompleteMe.vim
 conf.d/FlyGrep.vim
 conf.d/DoxygenToolkit.vim
 conf.d/nerdtree.vim
@@ -15,7 +15,6 @@ conf.d/vim-protodef.vim
 conf.d/a.vim
 conf.d/ultisnips.vim
 conf.d/vim-signature.vim
-conf.d/dict.vim
 conf.d/LeaderF.vim
 conf.d/ctrlsf.vim
 conf.d/indentLine.vim
