@@ -117,7 +117,7 @@ function! s:on_filetype_cpp() abort
 	inoremap {<CR>		{}<Left><CR><ESC>ko
 	"新开窗口显示 ctags
 	nmap <C-\>			<C-W><C-]>
-	setlocal foldenable foldmethod=syntax
+	setlocal foldenable foldmethod=indent
 	normal! zR
 endfunction
 

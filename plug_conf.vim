@@ -25,7 +25,7 @@ Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
 Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
 
 "FlyGrep 全文即时搜索
-Plug 'chengxie/FlyGrep.vim', { 'on': 'FlyGrep' }
+Plug 'wsdjeg/FlyGrep.vim', { 'on': 'FlyGrep' }
 
 "CtrlSF 全文搜索
 Plug 'dyng/ctrlsf.vim', { 'on': [ 'CtrlSF', 'CtrlSFToggle' ] }
@@ -72,9 +72,6 @@ Plug 'chengxie/vim-gutentags'
 "ycm_simple_conf 使用一个xml文件生成YouCompleteMe的配置
 Plug 'chengxie/ycm_simple_conf'
 
-"neocomplete
-"Plug 'Shougo/neocomplete.vim'
-
 "YouCompleteMe 自动补全, 语义分析
 if has('mac') || has('win32unix')
 	Plug 'ycm-core/YouCompleteMe', { 'do': 'python3 ./install.py --clang-completer --system-libclang' }
@@ -91,9 +88,6 @@ if has('mac') || has('win32unix')
 	"markdown即时预览
 	Plug 'suan/vim-instant-markdown', {'for': 'markdown' }
 endif
-
-"有道翻译
-"Plug 'iamcco/dict.vim'
 
 call plug#end()
 
