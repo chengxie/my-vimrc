@@ -15,7 +15,7 @@ let g:ctrlsf_mapping = {
 			\ "popenf": "",
 			\ }
 
-let g:ctrlsf_ignore_dir = ['.svn','.git','.hg', '.obj', '*.bak', '*.xml', '*.pb.*', 'xmlconfig_*', '*.tbx', '*.mps', '*.dat', '*.pid' ]
+let g:ctrlsf_ignore_dir = ['.svn','.git','.hg', '.obj', '*.bak', '*.xml', '*.pb.*', 'xmlconfig_*', '*.tbx', '*.mps', '*.dat', '*.pid', '*.log.*', '*.log' ]
 
 function! s:ctrlsf_find_by_filetype()
 	exec 'CtrlSF -filetype ' . &filetype . ' ' . expand("<cword>")

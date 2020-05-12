@@ -24,7 +24,7 @@ let g:ycm_min_num_of_chars_for_completion=2
 "跳转的buf窗口打开方式,横向分割
 let g:ycm_goto_buffer_command='horizontal-split' "vertical
 "是否启用诊断提示
-let g:ycm_enable_diagnostic_signs=1
+let g:ycm_enable_diagnostic_signs=0
 if g:ycm_enable_diagnostic_signs == 1
 	set signcolumn=yes
 	highlight YcmErrorLine guibg=#3f0000
