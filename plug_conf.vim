@@ -25,7 +25,7 @@ Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
 Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
 
 "FlyGrep 全文即时搜索
-Plug 'wsdjeg/FlyGrep.vim', { 'on': 'FlyGrep' }
+Plug 'chengxie/FlyGrep.vim', { 'on': 'FlyGrep' }
 
 "CtrlSF 全文搜索
 Plug 'dyng/ctrlsf.vim', { 'on': [ 'CtrlSF', 'CtrlSFToggle' ] }
