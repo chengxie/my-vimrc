@@ -63,6 +63,12 @@ Plug 'derekwyatt/vim-fswitch'
 "由接口快速生成实现框架, 依赖vim-fswitch
 Plug 'derekwyatt/vim-protodef', { 'for': [ 'cpp', 'c', 'objc' ] }
 
+"svn 实时diff
+Plug 'mhinz/vim-signify', { 'branch': 'legacy' }
+
+"svn 各种操作插件
+Plug 'juneedahamed/svnj.vim'
+
 "代码自动对齐
 Plug 'godlygeek/tabular'
 
