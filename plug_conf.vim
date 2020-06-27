@@ -80,7 +80,8 @@ Plug 'chengxie/ycm_simple_conf'
 
 "YouCompleteMe 自动补全, 语义分析
 if has('mac') || has('win32unix')
-	Plug 'ycm-core/YouCompleteMe', { 'do': 'python3 ./install.py --clang-completer --system-libclang' }
+	Plug 'ycm-core/YouCompleteMe', { 'do': 'python3 ./install.py --clang-completer' }
+" --system-libclang
 else
 	Plug 'ycm-core/YouCompleteMe', { 'do': 'python3 ./install.py --clang-completer' }
 endif
