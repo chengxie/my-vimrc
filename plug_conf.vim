@@ -3,9 +3,6 @@ call plug#begin('~/.vim/plugged')
 "中文手册
 Plug 'yianwillis/vimcdoc'
 
-"monokai主题
-Plug 'chengxie/vim-material-monokai'
-
 "airline
 Plug 'vim-airline/vim-airline'
 
@@ -21,12 +18,6 @@ Plug 'ryanoasis/vim-devicons'
 "LeaderF 文件模糊查找
 Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
 
-"TagBar tags标签列表
-Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
-
-"FlyGrep 全文即时搜索
-Plug 'chengxie/FlyGrep.vim', { 'on': 'FlyGrep' }
-
 "CtrlSF 全文搜索
 Plug 'dyng/ctrlsf.vim', { 'on': [ 'CtrlSF', 'CtrlSFToggle' ] }
 
@@ -36,17 +27,14 @@ Plug 'terryma/vim-multiple-cursors'
 "注释开关
 Plug 'scrooloose/nerdcommenter'
 
-"DoxygenToolkit
-Plug 'chengxie/DoxygenToolkit.vim', { 'for': [ 'cpp', 'c', 'objc', 'php', 'python' ] }
-
 "书签
 Plug 'kshenoy/vim-signature'
 
 "模版补全,需要python3.7+支持
 Plug 'SirVer/ultisnips'
 
-"my vim snippets for ultisnips
-Plug 'chengxie/my-vim-snippets'
+"Write JavaScript ES6 easily with vim.
+Plug 'isRuslan/vim-es6'
 
 "缩进线
 Plug 'Yggdroot/indentLine'
@@ -54,23 +42,35 @@ Plug 'Yggdroot/indentLine'
 "c++语法高亮, 支持stl库关键字
 Plug 'octol/vim-cpp-enhanced-highlight', { 'for': [ 'cpp', 'c' ] }
 
-"a.vim 切换cpp,h
-Plug 'chengxie/a.vim', { 'for': [ 'cpp', 'c', 'objc' ] }
-
 "fswitch 切换cpp,h, 功能与A.vim重复, 但是vim-protodef依赖这个
 Plug 'derekwyatt/vim-fswitch'
 
 "由接口快速生成实现框架, 依赖vim-fswitch
 Plug 'derekwyatt/vim-protodef', { 'for': [ 'cpp', 'c', 'objc' ] }
 
-"svn 实时diff
-Plug 'mhinz/vim-signify', { 'branch': 'legacy' }
-
-"svn 各种操作插件
-Plug 'juneedahamed/svnj.vim'
-
 "代码自动对齐
 Plug 'godlygeek/tabular'
+
+"YouCompleteMe 自动补全, 语义分析
+Plug 'ycm-core/YouCompleteMe', { 'do': 'python3 ./install.py --clang-completer' }
+
+"monokai主题
+Plug 'chengxie/vim-material-monokai'
+
+"TagBar tags标签列表
+Plug 'chengxie/tagbar', { 'on': 'TagbarToggle' }
+
+"FlyGrep 全文即时搜索
+Plug 'chengxie/FlyGrep.vim', { 'on': 'FlyGrep' }
+
+"DoxygenToolkit
+Plug 'chengxie/DoxygenToolkit.vim', { 'for': [ 'cpp', 'c', 'objc', 'php', 'python' ] }
+
+"my vim snippets for ultisnips
+Plug 'chengxie/my-vim-snippets'
+
+"a.vim 切换cpp,h
+Plug 'chengxie/a.vim', { 'for': [ 'cpp', 'c', 'objc' ] }
 
 "gutentags ctags 管理器
 Plug 'chengxie/vim-gutentags'
@@ -78,16 +78,8 @@ Plug 'chengxie/vim-gutentags'
 "ycm_simple_conf 使用一个xml文件生成YouCompleteMe的配置
 Plug 'chengxie/ycm_simple_conf'
 
-"YouCompleteMe 自动补全, 语义分析
-if has('mac') || has('win32unix')
-	Plug 'ycm-core/YouCompleteMe', { 'do': 'python3 ./install.py --clang-completer' }
-" --system-libclang
-else
-	Plug 'ycm-core/YouCompleteMe', { 'do': 'python3 ./install.py --clang-completer' }
-endif
-
 "vim-instant-markdown
-if has('mac') || has('win32unix')
+if has('mac')
 	"markdown语法高亮, 必须在tabular之后加载
 	Plug 'plasticboy/vim-markdown', {'for': 'markdown' }
 	"markdown目录链接自动生成,支持 GFM 和 Redcarpet 两种链接风格

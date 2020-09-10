@@ -5,3 +5,6 @@ let g:tagbar_left = 1
 let g:tagbar_hide_nonpublic = 0
 "let g:tagbar_map_close='<ESC><ESC>'
 nnoremap <silent><F2> :TagbarToggle<CR>
+let g:tagbar_type_javascript = { 'ctagsbin' : 'jsctags' }
+
+
