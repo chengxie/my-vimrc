@@ -11,6 +11,7 @@ set smartindent		"C程序智能自动缩进
 set showmatch		"插入括号时短暂跳转到匹配的括号
 set incsearch		"输入搜索模式时同时高亮部分的匹配
 set nofoldenable	"默认关闭折叠
+set foldlevelstart=99
 set nobackup		"覆盖文件时不保留备份文件
 set nowrap			"禁止自动换行
 set ruler			"显示光标当前位置
@@ -118,7 +119,7 @@ function! s:on_filetype_cpp() abort
 	"新开窗口显示 ctags
 	nmap <C-\>			<C-W><C-]>
 	setlocal foldenable foldmethod=indent
-	normal! zR
+	"normal! zR
 endfunction
 
 function! s:on_filetype_python() abort	
@@ -128,7 +129,7 @@ function! s:on_filetype_python() abort
 	setlocal expandtab		"将<Tab>转换成空格
 	setlocal smarttab		"插入<Tab>时使用 'shiftwidth'
 	setlocal foldenable foldmethod=indent
-	normal! zR
+	"normal! zR
 endfunction
 
 augroup my_augroup

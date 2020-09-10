@@ -33,6 +33,9 @@ Plug 'kshenoy/vim-signature'
 "模版补全,需要python3.7+支持
 Plug 'SirVer/ultisnips'
 
+"snippets for ultisnips
+Plug 'honza/vim-snippets'
+
 "Write JavaScript ES6 easily with vim.
 Plug 'isRuslan/vim-es6'
 
@@ -67,7 +70,7 @@ Plug 'chengxie/FlyGrep.vim', { 'on': 'FlyGrep' }
 Plug 'chengxie/DoxygenToolkit.vim', { 'for': [ 'cpp', 'c', 'objc', 'php', 'python' ] }
 
 "my vim snippets for ultisnips
-Plug 'chengxie/my-vim-snippets'
+"Plug 'chengxie/my-vim-snippets'
 
 "a.vim 切换cpp,h
 Plug 'chengxie/a.vim', { 'for': [ 'cpp', 'c', 'objc' ] }
