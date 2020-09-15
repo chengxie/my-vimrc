@@ -42,4 +42,4 @@ nnoremap <silent><leader>py :call <SID>open_term('python')<CR>
 nnoremap <silent><leader>sh :call <SID>open_term('zsh')<CR>
 nnoremap <silent><space>py :call <SID>open_term('python')<CR>
 nnoremap <silent><space>sh :call <SID>open_term('zsh')<CR>
-nnoremap <silent><F1>	:call <SID>display_help($HOME . '/.vim/README.md')<CR>
+nnoremap <silent><F1>	:call <SID>display_help($HOME . '/.vim/README')<CR>
