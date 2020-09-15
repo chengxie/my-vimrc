@@ -10,7 +10,7 @@ conf.d/YouCompleteMe.vim
 conf.d/FlyGrep.vim
 conf.d/DoxygenToolkit.vim
 conf.d/nerdtree.vim
-conf.d/vim-instant-markdown.vim
+conf.d/markdown-preview.vim
 conf.d/vim-protodef.vim
 conf.d/a.vim
 conf.d/ultisnips.vim

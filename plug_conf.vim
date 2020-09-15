@@ -91,7 +91,8 @@ if has('mac')
 	"markdown目录链接自动生成,支持 GFM 和 Redcarpet 两种链接风格
 	Plug 'mzlogin/vim-markdown-toc', {'for': 'markdown' }
 	"markdown即时预览
-	Plug 'suan/vim-instant-markdown', {'for': 'markdown' }
+	Plug 'iamcco/mathjax-support-for-mkdp'
+	Plug 'iamcco/markdown-preview.vim'
 endif
 
 call plug#end()
