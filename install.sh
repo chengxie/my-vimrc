@@ -36,9 +36,7 @@ echo ${URL_PREFIX}/plug_conf.vim
 curl -#SfLo ${HOME}/.vim/plug_conf.vim --create-dirs ${URL_PREFIX}/plug_conf.vim
 
 echo ${URL_PREFIX}/README.md
-curl -#SfLo ${HOME}/.vim/README --create-dirs ${URL_PREFIX}/README.md
-sed -i 's/&lt;/</g' ${HOME}/.vim/README
-sed -i 's/&gt;/>/g' ${HOME}/.vim/README
+curl -#SfLo ${HOME}/.vim/README.md --create-dirs ${URL_PREFIX}/README.md
 
 echo $VIM_PLUG_URL
 curl -#SfLo ${HOME}/.vim/autoload/plug.vim --create-dirs ${VIM_PLUG_URL}
