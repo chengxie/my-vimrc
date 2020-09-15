@@ -1,5 +1,5 @@
-Author:  CHENG XIE <chengxie@me.com>
-Licence: GPL v3.0
+* Author:  CHENG XIE <chengxie@me.com>
+* Licence: GPL v3.0
 
 # My vimrc
 Just my vimrc
