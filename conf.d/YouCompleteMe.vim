@@ -41,18 +41,8 @@ let g:ycm_filetype_whitelist = {
 			\ "lua":1, "php":1, "python":1,
 			\ "javascript":1, "css":1, "html":1,
 			\ }
-"映射按键
-let g:ycm_key_list_select_completion=['<C-J>']
-let g:ycm_key_list_previous_completion=['<C-K>']
-let g:ycm_key_list_stop_completion=['<C-SPACE>', '<CR>' ]
-" YCM 集成 OmniCppComplete 补全引擎，设置其快捷键
-inoremap <leader>x <C-X><C-O>
-nnoremap <silent><leader>jj :YcmCompleter GoToDefinitionElseDeclaration<CR>
-nnoremap <silent><leader>jd	:YcmCompleter GoToDeclaration<CR>
-"nnoremap <silent><leader>jc :YcmCompleter GoToDefinition<CR>
-nnoremap <silent><leader>jc :call <SID>TracyoneGotoDef("")<CR>
-nnoremap <Leader>g :call <SID>TracyoneGotoDef("")<cr>
-nnoremap <C-\>g :call <SID>TracyoneGotoDef("sp")<cr>
+
+
 
 function! s:TracyoneGotoDef(open_type)
 	let l:ycm_ret=s:YcmGotoDef(a:open_type)
@@ -101,4 +91,22 @@ func! s:YcmGotoDef(open_type)
 		return 1
 	endif
 endfunc
+
+
+
+
+
+"映射按键
+let g:ycm_key_list_select_completion=['<C-J>']
+let g:ycm_key_list_previous_completion=['<C-K>']
+let g:ycm_key_list_stop_completion=['<C-SPACE>', '<CR>' ]
+" YCM 集成 OmniCppComplete 补全引擎，设置其快捷键
+inoremap <leader>x <C-X><C-O>
+nnoremap <silent><leader>jj :YcmCompleter GoToDefinitionElseDeclaration<CR>
+nnoremap <silent><leader>jd	:YcmCompleter GoToDeclaration<CR>
+"nnoremap <silent><leader>jc :YcmCompleter GoToDefinition<CR>
+nnoremap <silent><leader>jc :call <SID>TracyoneGotoDef("")<CR>
+nnoremap <silent><leader>g :call <SID>TracyoneGotoDef("")<CR>
+nnoremap <silent><C-\>g :call <SID>TracyoneGotoDef("sp")<CR>
+
 

@@ -40,6 +40,9 @@ if $LC_TERMINAL == 'iTerm2' || has('win32unix') || has('gui_running')
 	set termguicolors
 endif
 
+"let mapleader='\<space>'
+let mapleader=' '
+
 "加载插件管理器
 exec 'silent! source '.$HOME.'/.vim/plug_conf.vim'
 
@@ -155,5 +158,4 @@ nmap <silent><F8>	<ESC>:%s/\r\n/\r/g<CR><ESC>:w<CR><ESC>:%s/\r/\r/g<CR>
 "nmap <F10>	#:%s/<C-R>=expand("<cword>")<CR>//g<Left><Left>
 "清除搜索高亮
 "nmap <silent><F11>	:nohl<CR>
-
 

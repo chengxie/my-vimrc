@@ -20,5 +20,5 @@ function! s:open_zsh() abort
 	call quickui#terminal#open('zsh', opts)
 endfunc
 
-nnoremap <Leader>py :call <SID>open_python()<CR>
-nnoremap <Leader>sh :call <SID>open_zsh()<CR>
+nnoremap <silent><leader>py :call <SID>open_python()<CR>
+nnoremap <silent><leader>sh :call <SID>open_zsh()<CR>
