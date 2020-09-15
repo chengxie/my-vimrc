@@ -2,6 +2,7 @@
 "let g:quickui_color_scheme = 'solarized'
 "let g:quickui_color_scheme = 'papercol light'
 let g:quickui_color_scheme = 'papercol dark'
+let g:quickui_border_style = 3
 
 function! TermExit(code) 
     echom "terminal exit code: ". a:code
