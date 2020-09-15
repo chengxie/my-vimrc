@@ -4,7 +4,7 @@ Licence: GPL v3.0
 # my vimrc
 Just my vimrc
 
-Usage:
+Installation:
 ```
 curl -#SfL https://raw.githubusercontent.com/chengxie/my-vimrc/master/install.sh | bash
 ```
