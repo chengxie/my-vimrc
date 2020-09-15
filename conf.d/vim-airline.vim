@@ -19,7 +19,8 @@ let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#buffer_nr_show = 1
 "let g:airline#extensions#tagbar#enabled = 1
 "let g:airline#extensions#fugitiveline#enabled = 0
-nmap <silent><leader>q	:bn<CR>:bd #<CR>
-nnoremap <silent><C-L>	:bn!<CR>
-nnoremap <silent><C-H>	:bp!<CR>
+nnoremap <silent><leader>q	:bn<CR>:bd #<CR>
+nnoremap <silent><space>q	:bn<CR>:bd #<CR>
+nnoremap <silent><C-L>		:bn!<CR>
+nnoremap <silent><C-H>		:bp!<CR>
 

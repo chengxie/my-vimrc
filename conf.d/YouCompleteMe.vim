@@ -101,12 +101,17 @@ let g:ycm_key_list_select_completion=['<C-J>']
 let g:ycm_key_list_previous_completion=['<C-K>']
 let g:ycm_key_list_stop_completion=['<C-SPACE>', '<CR>' ]
 " YCM 集成 OmniCppComplete 补全引擎，设置其快捷键
-inoremap <leader>x <C-X><C-O>
+"inoremap <leader>x <C-X><C-O>
 nnoremap <silent><leader>jj :YcmCompleter GoToDefinitionElseDeclaration<CR>
 nnoremap <silent><leader>jd	:YcmCompleter GoToDeclaration<CR>
 "nnoremap <silent><leader>jc :YcmCompleter GoToDefinition<CR>
 nnoremap <silent><leader>jc :call <SID>TracyoneGotoDef("")<CR>
 nnoremap <silent><leader>g :call <SID>TracyoneGotoDef("")<CR>
-nnoremap <silent><C-\>g :call <SID>TracyoneGotoDef("sp")<CR>
 
+nnoremap <silent><space>jj :YcmCompleter GoToDefinitionElseDeclaration<CR>
+nnoremap <silent><space>jd	:YcmCompleter GoToDeclaration<CR>
+"nnoremap <silent><space>jc :YcmCompleter GoToDefinition<CR>
+nnoremap <silent><space>jc :call <SID>TracyoneGotoDef("")<CR>
+nnoremap <silent><space>g :call <SID>TracyoneGotoDef("")<CR>
 
+"nnoremap <silent><C-g><C-g> :call <SID>TracyoneGotoDef("sp")<CR>

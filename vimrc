@@ -40,8 +40,6 @@ if $LC_TERMINAL == 'iTerm2' || has('win32unix') || has('gui_running')
 	set termguicolors
 endif
 
-"let mapleader='\<space>'
-let mapleader=' '
 
 "加载插件管理器
 exec 'silent! source '.$HOME.'/.vim/plug_conf.vim'
@@ -97,6 +95,7 @@ function! s:toggle_win_zoom() abort
 	endif
 endfunction
 nnoremap <silent><leader>z :call <SID>toggle_win_zoom()<CR>
+nnoremap <silent><space>z :call <SID>toggle_win_zoom()<CR>
 
 
 "==============================================================

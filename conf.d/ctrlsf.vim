@@ -15,7 +15,7 @@ let g:ctrlsf_mapping = {
 			\ "popenf": "",
 			\ }
 
-let g:ctrlsf_ignore_dir = ['.svn','.git','.hg', '.obj', '*.bak', '*.xml', '*.pb.*', 'xmlconfig_*', '*.tbx', '*.mps', '*.dat', '*.pid', '*.log.*', '*.log' ]
+let g:ctrlsf_ignore_dir = ['.svn','.git','.hg', '.obj', '*.bak', '*.xml', '*.pb.*', 'xmlconfig_*', '*.tbx', '*.mps', '*.dat', '*.pid', '*.log.*', '*.log', '*.pyc' ]
 
 function! s:ctrlsf_find_by_filetype()
 	exec 'CtrlSF -filetype ' . &filetype . ' ' . expand("<cword>")
@@ -26,7 +26,7 @@ function! s:ctrlsf_find()
 endfunction
 
 
-nmap <silent>f :CtrlSFToggle<CR>
-nmap <silent>F	:call <SID>ctrlsf_find()<CR>
-nmap <silent><F3> :call <SID>ctrlsf_find()<CR>
+nnoremap <silent>f :CtrlSFToggle<CR>
+nnoremap <silent>F	:call <SID>ctrlsf_find()<CR>
+nnoremap <silent><F3> :call <SID>ctrlsf_find()<CR>
 ":CtrlSFFocus<CR>

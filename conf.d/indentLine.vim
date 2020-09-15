@@ -10,4 +10,4 @@ let g:indentLine_char_list = ['¦']
 
 let g:indentLine_fileType = ['python']
 
-nmap <silent><F12>	:IndentLinesToggle<CR>
+nnoremap <silent><F12>	:IndentLinesToggle<CR>

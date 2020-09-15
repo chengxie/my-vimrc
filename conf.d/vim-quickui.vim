@@ -22,3 +22,5 @@ endfunc
 
 nnoremap <silent><leader>py :call <SID>open_python()<CR>
 nnoremap <silent><leader>sh :call <SID>open_zsh()<CR>
+nnoremap <silent><space>py :call <SID>open_python()<CR>
+nnoremap <silent><space>sh :call <SID>open_zsh()<CR>

@@ -1,8 +1,8 @@
 "==============================================================
 "LeaderF 文件模糊查找
 "==============================================================
-let g:Lf_ShortcutF = '<leader>f'
-let g:Lf_ShortcutB = '<leader><leader>'
+let g:Lf_ShortcutF = '<space>f'
+let g:Lf_ShortcutB = '<space><space>'
 let g:Lf_WindowPosition = 'popup'
 let g:Lf_StlSeparator = { 'left': '', 'right': '' }
 let g:Lf_WildIgnore = {
