@@ -14,13 +14,32 @@ function! s:open_python() abort
 	call quickui#terminal#open('python', opts)
 endfunc
 
-function! s:open_zsh() abort
+function! s:open_term(cmd) abort
 	let opts = {'w':100, 'h':40, 'callback':'TermExit'}
-	let opts.title = 'zsh'
-	call quickui#terminal#open('zsh', opts)
+	let opts.title = a:cmd
+	call quickui#terminal#open(a:cmd, opts)
 endfunc
 
-nnoremap <silent><leader>py :call <SID>open_python()<CR>
-nnoremap <silent><leader>sh :call <SID>open_zsh()<CR>
-nnoremap <silent><space>py :call <SID>open_python()<CR>
-nnoremap <silent><space>sh :call <SID>open_zsh()<CR>
+function! s:display_help(filename) abort
+	if !filereadable(a:filename)
+		call quickui#utils#errmsg('E484: Sorry, cannot open file ' . a:filename)
+		return -3
+	endif
+	let content = readfile(a:filename)
+	let opts = {'syntax':'help', 'color':'QuickPreview', 'close':'button'}
+	let opts.title = 'Help: ' . fnamemodify(a:filename, ':t')
+	let opts.command = ["exec 'nohl'"]
+	let opts.command += ["normal zz"]
+	let opts.w = 90
+	let opts.h = 43
+	" echom opts
+	let winid = quickui#textbox#open(content, opts)
+	return 0
+endfunc
+
+
+nnoremap <silent><leader>py :call <SID>open_term('python')<CR>
+nnoremap <silent><leader>sh :call <SID>open_term('zsh')<CR>
+nnoremap <silent><space>py :call <SID>open_term('python')<CR>
+nnoremap <silent><space>sh :call <SID>open_term('zsh')<CR>
+nnoremap <silent><F1>	:call <SID>display_help($HOME . '/.vim/README.md')<CR>

@@ -60,8 +60,6 @@ for cnf in s:cnflist
 	exec 'silent! source '.cnf
 endfor
 
-
-
 "==============================================================
 "F9 QuickFix 相关
 "==============================================================
@@ -158,3 +156,37 @@ nmap <silent><F8>	<ESC>:%s/\r\n/\r/g<CR><ESC>:w<CR><ESC>:%s/\r/\r/g<CR>
 "清除搜索高亮
 "nmap <silent><F11>	:nohl<CR>
 
+let g:terminal_ansi_colors = [
+			\ '#272822', 
+			\ '#f92672', 
+			\ '#a6e22e', 
+			\ '#f4bf75', 
+			\ '#66d9ef', 
+			\ '#ae81ff', 
+			\ '#a1efe4', 
+			\ '#f8f8f2', 
+			\ '#75715e', 
+			\ '#cc064e', 
+			\ '#7aac18', 
+			\ '#f0a945', 
+			\ '#21c7e9', 
+			\ '#7e33ff', 
+			\ '#00e5e5', 
+			\ '#f9f8f5', 
+			\ ]
+" black
+" Red
+" green
+" yellow
+" blue
+" magenta
+" cyan
+" white
+" black (bright)
+" red (bright)
+" green (bright)
+" yellow (bright)
+" blue (bright)
+" magenta (bright)
+" cyan (bright)
+" white (bright)
