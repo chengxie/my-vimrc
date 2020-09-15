@@ -1,6 +1,7 @@
 "==============================================================
 "LeaderF 文件模糊查找
 "==============================================================
+let g:Lf_WindowPosition = 'popup'
 let g:Lf_StlSeparator = { 'left': '', 'right': '' }
 let g:Lf_ShortcutF = ',,'
 let g:Lf_ShortcutB = '..'
