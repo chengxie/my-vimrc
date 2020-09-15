@@ -57,6 +57,9 @@ Plug 'godlygeek/tabular'
 "YouCompleteMe 自动补全, 语义分析
 Plug 'ycm-core/YouCompleteMe', { 'do': 'python3 ./install.py --clang-completer' }
 
+"Popup tools
+Plug 'skywind3000/vim-quickui'
+
 "monokai主题
 Plug 'chengxie/vim-material-monokai'
 
