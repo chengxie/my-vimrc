@@ -154,7 +154,7 @@ nmap <silent><F8>	<ESC>:%s/\r\n/\r/g<CR><ESC>:w<CR><ESC>:%s/\r/\r/g<CR>
 "光标所在单词的全文替换
 "nmap <F10>	#:%s/<C-R>=expand("<cword>")<CR>//g<Left><Left>
 "清除搜索高亮
-"nmap <silent><F11>	:nohl<CR>
+nmap <silent>,,	:nohl<CR>
 
 let g:terminal_ansi_colors = [
 			\ '#272822', 
