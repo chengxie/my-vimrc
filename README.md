@@ -1,15 +1,15 @@
 Author:  CHENG XIE <chengxie@me.com>
 Licence: GPL v3.0
 
-# my vimrc
+# My vimrc
 Just my vimrc
 
-Installation:
+#### Installation:
 ```
 curl -#SfL https://raw.githubusercontent.com/chengxie/my-vimrc/master/install.sh | bash
 ```
 
-快捷键说明:
+#### 快捷键说明:
 ---------------------------------------------------------------------------------------
 ```
 <F1>		显示快捷键说明窗口
