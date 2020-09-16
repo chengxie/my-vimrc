@@ -60,6 +60,15 @@ Plug 'ycm-core/YouCompleteMe', { 'do': 'python3 ./install.py --clang-completer' 
 "Popup tools
 Plug 'skywind3000/vim-quickui'
 
+"markdown语法高亮, 必须在tabular之后加载
+Plug 'plasticboy/vim-markdown', {'for': 'markdown' }
+
+"markdown目录链接自动生成,支持 GFM 和 Redcarpet 两种链接风格
+Plug 'mzlogin/vim-markdown-toc', {'for': 'markdown' }
+
+"markdown即时预览
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+
 "monokai主题
 Plug 'chengxie/vim-material-monokai'
 
@@ -83,17 +92,6 @@ Plug 'chengxie/vim-gutentags'
 
 "ycm_simple_conf 使用一个xml文件生成YouCompleteMe的配置
 Plug 'chengxie/ycm_simple_conf'
-
-"vim-instant-markdown
-if has('mac')
-	"markdown语法高亮, 必须在tabular之后加载
-	Plug 'plasticboy/vim-markdown', {'for': 'markdown' }
-	"markdown目录链接自动生成,支持 GFM 和 Redcarpet 两种链接风格
-	Plug 'mzlogin/vim-markdown-toc', {'for': 'markdown' }
-	"markdown即时预览
-	Plug 'iamcco/mathjax-support-for-mkdp'
-	Plug 'iamcco/markdown-preview.vim'
-endif
 
 call plug#end()
 
