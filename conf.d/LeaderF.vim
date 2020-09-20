@@ -1,7 +1,7 @@
 "==============================================================
 "LeaderF 文件模糊查找
 "==============================================================
-let g:Lf_ShortcutB = '<space>j'
+let g:Lf_ShortcutB = '<space><tab>'
 let g:Lf_ShortcutF = '<space><space>'
 let g:Lf_DefaultExternalTool = 'ag'
 let g:Lf_AutoResize = 1
