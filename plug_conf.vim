@@ -39,6 +39,8 @@ Plug 'honza/vim-snippets'
 "Write JavaScript ES6 easily with vim.
 Plug 'isRuslan/vim-es6'
 
+Plug 'Konfekt/FastFold'
+
 "缩进线
 Plug 'Yggdroot/indentLine'
 
