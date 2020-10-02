@@ -9,11 +9,13 @@ Plug 'vim-airline/vim-airline'
 "NERDTree 文件管理器
 Plug 'scrooloose/nerdtree', { 'on': [ 'NERDTreeToggle', 'NERDTreeFind' ] }
 
-"NERDTree插件，在NERDTree中为文件扩展名添加语法高亮, 配合vim-devicons显示icon
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight', { 'on': [ 'NERDTreeToggle', 'NERDTreeFind' ] }
+if has("gui_running")
+	"NERDTree插件，在NERDTree中为文件扩展名添加语法高亮, 配合vim-devicons显示icon
+	Plug 'tiagofumo/vim-nerdtree-syntax-highlight', { 'on': [ 'NERDTreeToggle', 'NERDTreeFind' ] }
 
-"NERDTree插件，在NERDTree中根据文件类型显示icon
-Plug 'ryanoasis/vim-devicons'
+	"NERDTree插件，在NERDTree中根据文件类型显示icon
+	Plug 'ryanoasis/vim-devicons'
+endif
 
 "LeaderF 文件模糊查找
 Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }

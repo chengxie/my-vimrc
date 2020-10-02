@@ -39,6 +39,10 @@ endif
 if $LC_TERMINAL == 'iTerm2' || has('win32unix') || has('gui_running')
 	set termguicolors
 endif
+if has("gui_running")
+	set guifont=SauceCodeProNerdFontComplete-Regular:h13
+	"set guifont=DroidSansMonoNerdF-:h13
+endif
 
 
 "加载插件管理器
