@@ -31,7 +31,7 @@ set fileencodings=utf-8,gbk,big5	"参与自动检测的字符编码
 set fileformat=unix					"文件输入输出使用的格式
 set fileformats=unix				"参与自动检测的 'fileformat' 的格式
 set background=dark					" Setting dark mode
-set noeb novb t_vb=					" 禁用响铃	
+set noeb vb t_vb=					" 禁用响铃	
 
 set term=$TERM "终端名
 if $TERM == 'xterm-256color'
