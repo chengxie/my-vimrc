@@ -31,18 +31,22 @@ set fileencodings=utf-8,gbk,big5	"参与自动检测的字符编码
 set fileformat=unix					"文件输入输出使用的格式
 set fileformats=unix				"参与自动检测的 'fileformat' 的格式
 set background=dark					" Setting dark mode
-set noeb vb t_vb=					" 禁用响铃	
+set clipboard=unnamed				"共享系统剪切板
 
 set term=$TERM "终端名
 if $TERM == 'xterm-256color'
 	set t_Co=256	"number of colors
+	set t_ZH=[3m
+	set t_ZR=[23m
+	set noeb vb t_vb=					" 禁用响铃	
 endif
+
 if $LC_TERMINAL == 'iTerm2' || has('win32unix') || has('gui_running')
 	set termguicolors
 endif
 if has("gui_running")
 	"set transp=5
-	set guifont=SauceCodeProNerdFontComplete-Regular:h13
+	set guifont=SauceCodeProNerdFontComplete-Regular:h14
 endif
 
 
@@ -54,6 +58,7 @@ if isdirectory($HOME.'/.vim/plugged/vim-material-monokai')
 	let g:materialmonokai_subtle_spell=1
 	let g:materialmonokai_subtle_airline=0
 	let g:materialmonokai_custom_lint_indicators=0
+	let g:materialmonokai_italic=1
 	let g:airline_theme='materialmonokai'
 	colorscheme material-monokai
 endif
@@ -145,24 +150,28 @@ augroup my_augroup
 	au! FileType python call <SID>on_filetype_python()
 	"重新打开文件时光标回到最后编辑的位置
 	au! BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g'\"zz" | endif
+	au! WinEnter * set cursorline
+	au! WinLeave * set nocursorline
 augroup end
 
 
 "==============================================================
 " 全局按键映射
 "==============================================================
-nmap <BS>		<C-W>h
-nmap <TAB>		<C-W>l
-nmap <C-J>		<C-W>j
-nmap <C-K>		<C-W>k
+nnoremap <BS>		<C-W>h
+nnoremap <TAB>		<C-W>l
+nnoremap <C-J>		<C-W>j
+nnoremap <C-K>		<C-W>k
 "c-bs do nothing
-imap 			<BS>	
+"imap 			<BS>	
 "将winows换行符替换为unix换行符
 nmap <silent><F8>	<ESC>:%s/\r\n/\r/g<CR><ESC>:w<CR><ESC>:%s/\r/\r/g<CR>
 "光标所在单词的全文替换
 "nmap <F10>	#:%s/<C-R>=expand("<cword>")<CR>//g<Left><Left>
 "清除搜索高亮
 nmap <silent>,,	:nohl<CR>
+nmap <SPACE>v	:vsp<CR>
+nmap <SPACE>h	:sb<CR>
 
 let g:terminal_ansi_colors = [
 			\ '#272822', 
@@ -198,4 +207,3 @@ let g:terminal_ansi_colors = [
 " magenta (bright)
 " cyan (bright)
 " white (bright)
-
