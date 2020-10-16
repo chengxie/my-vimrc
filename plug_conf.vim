@@ -6,16 +6,13 @@ Plug 'yianwillis/vimcdoc'
 "airline
 Plug 'vim-airline/vim-airline'
 
-"NERDTree 文件管理器
-Plug 'scrooloose/nerdtree', { 'on': [ 'NERDTreeToggle', 'NERDTreeFind' ] }
-
-if has("gui_running")
+"if has("gui_running")
 	"NERDTree插件，在NERDTree中为文件扩展名添加语法高亮, 配合vim-devicons显示icon
 	Plug 'tiagofumo/vim-nerdtree-syntax-highlight', { 'on': [ 'NERDTreeToggle', 'NERDTreeFind' ] }
 
 	"NERDTree插件，在NERDTree中根据文件类型显示icon
 	Plug 'ryanoasis/vim-devicons'
-endif
+"endif
 
 "LeaderF 文件模糊查找
 Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
@@ -59,7 +56,7 @@ Plug 'derekwyatt/vim-protodef', { 'for': [ 'cpp', 'c', 'objc' ] }
 Plug 'godlygeek/tabular'
 
 "YouCompleteMe 自动补全, 语义分析
-Plug 'ycm-core/YouCompleteMe', { 'do': 'python3 ./install.py --clang-completer' }
+Plug 'ycm-core/YouCompleteMe', { 'do': 'python3 ./install.py --clang-completer', 'for': [ 'cpp', 'c', 'objc', 'php', 'python' ] }
 
 "Popup tools
 Plug 'skywind3000/vim-quickui'
@@ -73,14 +70,20 @@ Plug 'mzlogin/vim-markdown-toc', {'for': 'markdown' }
 "markdown即时预览
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 
+"NERDTree 文件管理器
+Plug 'chengxie/nerdtree', { 'on': [ 'NERDTreeToggle', 'NERDTreeFind' ] }
+
 "monokai主题
 Plug 'chengxie/vim-material-monokai'
 
 "TagBar tags标签列表
 Plug 'chengxie/tagbar', { 'on': 'TagbarToggle' }
 
-"FlyGrep 全文即时搜索
-Plug 'chengxie/FlyGrep.vim', { 'on': 'FlyGrep' }
+
+if !has("gui_running")
+	"FlyGrep 全文即时搜索
+	Plug 'chengxie/FlyGrep.vim', { 'on': 'FlyGrep' }
+endif
 
 "DoxygenToolkit
 Plug 'chengxie/DoxygenToolkit.vim', { 'for': [ 'cpp', 'c', 'objc', 'php', 'python' ] }
@@ -92,10 +95,10 @@ Plug 'chengxie/DoxygenToolkit.vim', { 'for': [ 'cpp', 'c', 'objc', 'php', 'pytho
 Plug 'chengxie/a.vim', { 'for': [ 'cpp', 'c', 'objc' ] }
 
 "gutentags ctags 管理器
-Plug 'chengxie/vim-gutentags'
+Plug 'chengxie/vim-gutentags', { 'for': [ 'cpp', 'c', 'objc', 'php', 'python' ] }
 
 "ycm_simple_conf 使用一个xml文件生成YouCompleteMe的配置
-Plug 'chengxie/ycm_simple_conf'
+Plug 'chengxie/ycm_simple_conf', { 'for': [ 'cpp', 'c', 'objc', 'php', 'python' ] }
 
 call plug#end()
 
