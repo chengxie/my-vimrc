@@ -32,6 +32,7 @@ set fileformat=unix					"文件输入输出使用的格式
 set fileformats=unix				"参与自动检测的 'fileformat' 的格式
 set background=dark					" Setting dark mode
 set clipboard=unnamed				"共享系统剪切板
+set autoread
 
 set term=$TERM "终端名
 if $TERM == 'xterm-256color'
