@@ -100,5 +100,8 @@ Plug 'chengxie/vim-gutentags', { 'for': [ 'cpp', 'c', 'objc', 'php', 'python' ] 
 "ycm_simple_conf 使用一个xml文件生成YouCompleteMe的配置
 Plug 'chengxie/ycm_simple_conf', { 'for': [ 'cpp', 'c', 'objc', 'php', 'python' ] }
 
+Plug 'posva/vim-vue'
+"Plug 'scrooloose/syntastic'
+
 call plug#end()
 

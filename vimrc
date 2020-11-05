@@ -146,6 +146,7 @@ endfunction
 
 
 augroup my_augroup
+	au! FileType vue syntax sync fromstart
 	au! FileType cpp,c,php,javascript,objc,cs call <SID>on_filetype_cpp()
 	au! FileType python call <SID>on_filetype_python()
 	"重新打开文件时光标回到最后编辑的位置
