@@ -9,6 +9,7 @@ let g:NERDTreeWinPos = 'left'
 let g:NERDTreeMapJumpNextSibling='<C-N>'
 let g:NERDTreeMapJumpPrevSibling='<C-P>'
 let g:NERDTreeWinSize=40
+let NERDTreeIgnore=['__pycache__']
 nnoremap <silent>; :call <SID>NERDTreeToggle()<CR>
 nnoremap <silent><leader>v :call <SID>NERDTreeFind()<CR>
 augroup my_nerdtree

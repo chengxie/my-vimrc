@@ -92,7 +92,7 @@ Plug 'chengxie/DoxygenToolkit.vim', { 'for': [ 'cpp', 'c', 'objc', 'php', 'pytho
 "Plug 'chengxie/my-vim-snippets'
 
 "a.vim 切换cpp,h
-Plug 'chengxie/a.vim', { 'for': [ 'cpp', 'c', 'objc' ] }
+Plug 'chengxie/a.vim', { 'for': [ 'cpp', 'c', 'objc', 'js', 'vue' ] }
 
 "gutentags ctags 管理器
 Plug 'chengxie/vim-gutentags', { 'for': [ 'cpp', 'c', 'objc', 'php', 'python' ] }
@@ -101,6 +101,7 @@ Plug 'chengxie/vim-gutentags', { 'for': [ 'cpp', 'c', 'objc', 'php', 'python' ] 
 Plug 'chengxie/ycm_simple_conf', { 'for': [ 'cpp', 'c', 'objc', 'php', 'python' ] }
 
 Plug 'posva/vim-vue'
+"Plug 'MaraniMatias/vue-formatter'
 "Plug 'scrooloose/syntastic'
 
 call plug#end()
