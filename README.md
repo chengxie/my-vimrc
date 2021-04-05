@@ -6,7 +6,7 @@ Just my vimrc
 
 1. 需要终端支持Nerd字体, 例如:SauceCodeProNerd, 请自行安装
 2. 需要python3环境
-3. vim需要8.2以上，带python3支持, mac 下请使用macvim, linux下载 vim --version 查看，若不带python3，则需要自行源码编译
+3. vim需要8.2以上，带python3支持, Mac下建议使用macvim, linux下使用 vim --version 查看，若不带python3，则需要自行源码编译
 4. YouCompleteMe 在安装时需要编译，gcc环境必须有
 
 #### Installation:
