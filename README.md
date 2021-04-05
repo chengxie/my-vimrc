@@ -4,6 +4,11 @@
 # My vimrc
 Just my vimrc
 
+1. 需要终端支持Nerd字体, 例如:SauceCodeProNerd, 请自行安装
+2. 需要python3环境
+3. vim需要8.2以上，带python3支持, mac 下请使用macvim, linux下载 vim --version 查看，若不带python3，则需要自行源码编译
+4. YouCompleteMe 在安装时需要编译，gcc环境必须有
+
 #### Installation:
 ```
 curl -#SfL https://raw.githubusercontent.com/chengxie/my-vimrc/master/install.sh | bash
@@ -20,7 +25,7 @@ curl -#SfL https://raw.githubusercontent.com/chengxie/my-vimrc/master/install.sh
 <F8>            将winows换行符替换为unix换行符
 <F9>            开关QuickFix窗口
 <F12>           开关显示缩进线，只在python文件有效
-,,              清除搜索高亮
+,,              清除gd搜索结果的高亮
 <Tab>           向右切换窗口
 <Backspace>     向左切换窗口
 <Ctrl>j         向下切换窗口
@@ -33,14 +38,17 @@ curl -#SfL https://raw.githubusercontent.com/chengxie/my-vimrc/master/install.sh
 f               开关CtrlSF全文搜索结果窗口
 F               全文搜索光标所在的单词, 并将结果显示在左侧
 :CtrlSF xxx     全文搜索xxx
-<Space>sh       打开终端窗口, 默认是zsh
-<Space>py       打开python窗口
-:bd             关闭当前buffer
 <Space>q        关闭当前buffer
-:A              cpp与h文件来回切换
-:ASA            横向分割窗口，切换cpp或h文件, 新窗口分割在顶部
-:ASB            横向分割窗口，切换cpp或h文件, 新窗口分割在底部
-:AVL            纵向分割窗口，切换cpp或h文件, 新窗口分割在左侧
-:AVR            纵向分割窗口，切换cpp或h文件, 新窗口分割在右侧
+<Space>pp       在c或cpp文件中，根据.h文件的声明，生成定义框架代码
+<Space>g		跳转至声明
+<Space>aa		cpp与h文件来回切换
+<Space>al		切换cpp与h文件到右侧窗口
+<Space>asl      纵向分割窗口，切换cpp或h文件, 新窗口分割在右侧
+<Space>ah		切换cpp与h文件到左侧窗口
+<Space>ash      纵向分割窗口，切换cpp或h文件, 新窗口分割在左侧
+<Space>ak		切换cpp与h文件到上方窗口
+<Space>ask      横向分割窗口，切换cpp或h文件, 新窗口分割在上方
+<Space>aj		切换cpp与h文件到下方窗口
+<Space>asj      横向分割窗口，切换cpp或h文件, 新窗口分割在下方
 ---------------------------------------------------------------------------------------
 ```

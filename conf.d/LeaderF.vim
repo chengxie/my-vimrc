@@ -8,6 +8,6 @@ let g:Lf_AutoResize = 1
 let g:Lf_WindowPosition = 'popup'
 let g:Lf_StlSeparator = { 'left': '', 'right': '' }
 let g:Lf_WildIgnore = {
-		\ 'dir': ['.svn','.git','.hg', '.obj'],
+		\ 'dir': ['.svn','.git','.hg', '.obj', 'bin'],
 		\ 'file': ['*.sw?','~$*','*.bak','*.exe','*.o','*.so','*.a','*.so.*','*.py[co]', '*.tbx', '*.mps', '*.dat', '*.xml', '*.pb.*', 'xmlconfig_*', '*.pid', '*.d', '*.log.*', '*.log', '*.jpg', '*.png', '*.gif' ]
 		\}

@@ -24,12 +24,19 @@ let g:ycm_min_num_of_chars_for_completion=2
 "跳转的buf窗口打开方式,横向分割
 let g:ycm_goto_buffer_command='horizontal-split' "vertical
 "是否启用诊断提示
-let g:ycm_enable_diagnostic_signs=0
-if g:ycm_enable_diagnostic_signs == 1
-	set signcolumn=yes
-	highlight YcmErrorLine guibg=#3f0000
+if &diff == 1
+	" diff模式下关闭诊断
+	let g:ycm_enable_diagnostic_signs=0
+	let g:ycm_enable_diagnostic_highlighting=0
+	let g:ycm_show_diagnostics_ui=0
+	let g:ycm_always_populate_location_list=0
+else
+	let g:ycm_enable_diagnostic_signs=1
+	"set signcolumn=on
+	highlight YcmErrorLine guibg=#3f0000 ctermbg=52
 	let g:ycm_enable_diagnostic_highlighting=1
 	let g:ycm_show_diagnostics_ui=1 
+	let g:ycm_always_populate_location_list=1
 endif
 let g:ycm_disable_for_files_larger_than_kb = 0
 let g:ycm_add_preview_to_completeopt = 0
@@ -110,8 +117,8 @@ nnoremap <silent><leader>g :call <SID>TracyoneGotoDef("")<CR>
 
 nnoremap <silent><space>jj :YcmCompleter GoToDefinitionElseDeclaration<CR>
 nnoremap <silent><space>jd	:YcmCompleter GoToDeclaration<CR>
-"nnoremap <silent><space>jc :YcmCompleter GoToDefinition<CR>
-nnoremap <silent><space>jc :call <SID>TracyoneGotoDef("")<CR>
+nnoremap <silent><space>jc :YcmCompleter GoToDefinition<CR>
+"nnoremap <silent><space>jc :call <SID>TracyoneGotoDef("")<CR>
 nnoremap <silent><space>g :call <SID>TracyoneGotoDef("")<CR>
 
 "nnoremap <silent><C-g><C-g> :call <SID>TracyoneGotoDef("sp")<CR>

@@ -24,11 +24,11 @@
 			"\ 'ListBufferMarks'    :  "m/",
 			"\ 'ListBufferMarkers'  :  "m?"
 			"\ }
-highlight bookmark_color ctermbg=137 ctermfg=235 guibg=grey guifg=RoyalBlue3
+highlight bookmark_color ctermbg=137 ctermfg=235 guibg=grey guifg=RoyalBlue3 
 highlight SignatureMarkText guifg=red
-highlight SignatureMarkLine guibg=royalblue4 
+highlight SignatureMarkLine guibg=royalblue4 ctermbg=27
 highlight SignatureMarkerText guifg=green
-highlight SignatureMarkerLine guibg=red4 
+highlight SignatureMarkerLine guibg=red4 ctermbg=22
 "let g:SignatureMarkTextHLDynamic=1
 "let g:SignatureMarkerTextHLDynamic=1
 "let g:SignatureMarkerLineHL='bookmark_color'

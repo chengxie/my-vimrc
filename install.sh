@@ -3,22 +3,24 @@
 VIM_PLUG_URL="https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
 URL_PREFIX="https://raw.githubusercontent.com/chengxie/my-vimrc/master"
 cnf_list=(
-conf.d/vim-gutentags.vim
-conf.d/tagbar.vim
-conf.d/vim-airline.vim
-conf.d/YouCompleteMe.vim
-conf.d/FlyGrep.vim
-conf.d/DoxygenToolkit.vim
-conf.d/nerdtree.vim
-conf.d/markdown-preview.vim
-conf.d/vim-protodef.vim
-conf.d/a.vim
-conf.d/ultisnips.vim
-conf.d/vim-signature.vim
-conf.d/LeaderF.vim
 conf.d/ctrlsf.vim
+conf.d/DoxygenToolkit.vim
+conf.d/FastFold.vim
+conf.d/FlyGrep.vim
 conf.d/indentLine.vim
+conf.d/LeaderF.vim
+conf.d/markdown-preview.vim
+conf.d/nerdtree.vim
+conf.d/tagbar.vim
+conf.d/ultisnips.vim
+conf.d/vim-airline.vim
+conf.d/vim-fswitch.vim
+conf.d/vim-gutentags.vim
+conf.d/vim-multiple-cursors.vim
+conf.d/vim-protodef.vim
 conf.d/vim-quickui.vim
+conf.d/vim-signature.vim
+conf.d/YouCompleteMe.vim
 )
 
 download_cnf() {
