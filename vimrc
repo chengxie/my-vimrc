@@ -47,7 +47,7 @@ if $LC_TERMINAL == 'iTerm2' || has('win32unix') || has('gui_running')
 endif
 if has("gui_running")
 	"set transp=8
-	set guifont=SauceCodeProNerdFontComplete-Regular:h14
+	set guifont=SauceCodeProNerdFontCompleteM-Regular:h14
 endif
 
 "加载插件管理器
