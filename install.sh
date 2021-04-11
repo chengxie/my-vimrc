@@ -37,6 +37,9 @@ curl -#SfLo ${HOME}/.vimrc --create-dirs ${URL_PREFIX}/vimrc
 echo ${URL_PREFIX}/plug_conf.vim
 curl -#SfLo ${HOME}/.vim/plug_conf.vim --create-dirs ${URL_PREFIX}/plug_conf.vim
 
+echo ${URL_PREFIX}/github-markdown.css
+curl -#SfLo ${HOME}/.vim/github-markdown.css --create-dirs ${URL_PREFIX}/github-markdown.css
+
 echo ${URL_PREFIX}/README.md
 curl -#SfLo ${HOME}/.vim/README.md --create-dirs ${URL_PREFIX}/README.md
 
